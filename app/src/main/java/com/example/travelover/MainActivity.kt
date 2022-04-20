@@ -72,10 +72,13 @@ fun HomeScreen() {
 
                         }
 
+
                     }
-                ){
+                )
+                {
                     MainContent()
                 }
+
 
             }
         }
@@ -84,6 +87,11 @@ fun HomeScreen() {
 
 @Composable
 fun MainContent(){
+    Spacer(modifier = Modifier.height(300.dp))
+    Spacer(modifier = Modifier.width(60.dp))
+    Text(text = "Where would you like to travel next?", style = MaterialTheme.typography.h6, color = Color.White)
+
+
 
 }
 
