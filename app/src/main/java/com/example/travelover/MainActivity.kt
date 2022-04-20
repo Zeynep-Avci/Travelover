@@ -78,7 +78,9 @@ fun HomeScreen() {
 }
 
 @Composable
-fun MainContent
+fun MainContent(){
+
+}
 
 
 @Preview(showBackground = true)
