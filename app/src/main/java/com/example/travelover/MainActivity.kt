@@ -3,6 +3,7 @@ package com.example.travelover
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CornerSize
@@ -18,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.travelover.ui.theme.Atol
 import com.example.travelover.ui.theme.TraveloverTheme
 
 class MainActivity : ComponentActivity() {
@@ -54,15 +56,18 @@ fun HomeScreen() {
 
                 Scaffold(
                     topBar = {
-                        TopAppBar(backgroundColor = Color.Magenta, elevation = 3.dp) {
+                        TopAppBar(backgroundColor = Atol, elevation = 3.dp) {
                             Row {
+                                /*
                                 Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Arrow back",
                                     modifier = Modifier.clickable {
                                         //navController.popBackStack()  // go back to last screen
                                     })
 
-                                Spacer(modifier = Modifier.width(20.dp))
-                                Text(text = "My Favorite Movies", style = MaterialTheme.typography.h6)
+                                 */
+
+                                Spacer(modifier = Modifier.width(70.dp))
+                                Text(text = "Travelover", style = MaterialTheme.typography.h3, color = Color.White)
                             }
 
                         }
