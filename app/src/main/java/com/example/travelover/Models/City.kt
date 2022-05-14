@@ -2,7 +2,7 @@ package com.example.travelover.Models
 
 data class City(
     val id: String,
-    val title: String,
+    val name: String,
     val country: String,
     val population: String,
     val area: String,
@@ -15,7 +15,7 @@ fun getCities(): List<City> {
     return listOf(
         City(
             id = "1",
-            title = "Vienna",
+            name = "Vienna",
             country = "Austria",
             population = "2.600.000",
             area = "414.78 km2",
@@ -34,7 +34,7 @@ fun getCities(): List<City> {
 
         City(
             id = "2",
-            title = "Milan",
+            name = "Milan",
             country = "Italy",
             population = "1.399.860",
             area = "181.76 km2",
@@ -54,7 +54,7 @@ fun getCities(): List<City> {
 
         City(
             id = "3",
-            title = "Vienna",
+            name = "Istanbul",
             country = "Turkey",
             population = "15.840.900",
             area = "5.343.22 km2",

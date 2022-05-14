@@ -110,24 +110,24 @@ fun CityRow(
                 Column(modifier = Modifier
                     .padding(4.dp)
                     .widthIn(200.dp, 200.dp)) {
-                    Text(text = city.title,
+                    Text(text = city.name,
                         style = MaterialTheme.typography.h6)
 
-                    Text(text = "Director ${city.area}",
+                    Text(text = "Area ${city.area}",
                         style = MaterialTheme.typography.caption)
 
-                    Text(text = "Released: ${city.language}",
+                    Text(text = "Lanuguage: ${city.language}",
                         style = MaterialTheme.typography.caption)
 
                     AnimatedVisibility(visible = expanded) {
                         Column {
-                            Text(text = "Plot: ${city.country}", style = MaterialTheme.typography.caption)
+                            Text(text = "Country: ${city.country}", style = MaterialTheme.typography.caption)
 
                             Divider(modifier = Modifier.padding(3.dp))
 
-                            Text(text = "Genre: ${city.population}", style = MaterialTheme.typography.caption)
-                            Text(text = "Actors: ${city.language}", style = MaterialTheme.typography.caption)
-                            Text(text = "Rating: ${city.area}", style = MaterialTheme.typography.caption)
+                            Text(text = "Population: ${city.population}", style = MaterialTheme.typography.caption)
+                            Text(text = "Language: ${city.language}", style = MaterialTheme.typography.caption)
+                            Text(text = "Area: ${city.area}", style = MaterialTheme.typography.caption)
                         }
                     }
 
