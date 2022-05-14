@@ -1,4 +1,4 @@
 package com.example.travelover.Navigation
 
-enum class CityScreens {
+enum class AppScreens {
 }
