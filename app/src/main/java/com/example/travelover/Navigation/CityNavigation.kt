@@ -7,33 +7,37 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.travelover.Screens.DetailScreen
+import com.example.travelover.Screens.HomeScreen
+import com.example.travelover.Screens.FavouriteScreen
+import com.example.travelover.ViewModels.FavouriteViewModel
 
 
 @Composable
-fun MovieNavigation(){
+fun CityNavigation(){
     val navController = rememberNavController() // create NavController instance
 
-    val favoritesViewModel: FavoriteViewModel = viewModel()
+    val favouriteViewModel: FavouriteViewModel = viewModel()
 
     NavHost(navController = navController, startDestination = AppScreens.HomeScreen.name){
         composable(route = AppScreens.HomeScreen.name) {
-            AppScreens.HomeScreen(navController, favoritesViewModel)
+            HomeScreen(navController, favouriteViewModel)
         }
 
-        composable(route = AppScreens.FavoriteScreen.name) {
-            FavoriteScreen(navController, favoritesViewModel)
+        composable(route = AppScreens.FavouriteScreen.name) {
+            FavouriteScreen(navController, favouriteViewModel)
         }
 
         composable(
-            route = AppScreens.DetailScreen.name+"/{movieId}",// placeholder for arguments
-            arguments = listOf(navArgument(name = "movieId"){   // define arguments that can be passed
+            route = AppScreens.DetailScreen.name+"/{cityId}",// placeholder for arguments
+            arguments = listOf(navArgument(name = "cityId"){   // define arguments that can be passed
                 type = NavType.StringType
             })) { navBackStackEntry ->
 
-            AppScreens.DetailScreen(
+            DetailScreen(
                 navController = navController,
-                favoritesViewModel,
-                movieId = navBackStackEntry.arguments?.getString("movieId") // pass the value of movieId argument to the DetailScreen composable
+                favouriteViewModel,
+                cityId = navBackStackEntry.arguments?.getString("cityId") // pass the value of movieId argument to the DetailScreen composable
             )
         }
     }

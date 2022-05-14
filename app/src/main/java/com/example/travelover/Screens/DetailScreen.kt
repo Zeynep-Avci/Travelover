@@ -9,6 +9,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.travelover.Models.City
 import com.example.travelover.Models.getCities
+import com.example.travelover.ViewModels.FavouriteViewModel
+import com.example.travelover.Widgets.CityRow
+import com.example.travelover.Widgets.FavoriteIcon
+import com.example.travelover.Widgets.HorizontalScrollableImageView
+import com.example.travelover.Widgets.SimpleTopAppBar
 
 
 fun filterCity(cityId: String?): City {
@@ -16,22 +21,22 @@ fun filterCity(cityId: String?): City {
 }
 
 @Composable
-fun DetailScreen(navController: NavController, favoritesViewModel: FavoriteViewModel, cityId: String?){
-    val movie = filterCity(cityId = cityId)
+fun DetailScreen(navController: NavController, favouriteViewModel: FavouriteViewModel, cityId: String?){
+    val city = filterCity(cityId = cityId)
 
     Scaffold(
         topBar = {
             SimpleTopAppBar(arrowBackClicked = { navController.popBackStack() }) {
-                Text(text = movie.title)
+                Text(text = city.title)
             }
         }
     ) {
-        MainContent(movie = movie, favoritesViewModel)
+        MainContent(city = city , favouriteViewModel)
     }
 }
 
 @Composable
-fun MainContent(city: City, favoritesViewModel: FavoriteViewModel){
+fun MainContent(city: City, favouriteViewModel: FavouriteViewModel){
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -46,12 +51,12 @@ fun MainContent(city: City, favoritesViewModel: FavoriteViewModel){
             CityRow(city = city) {
                 FavoriteIcon(
                     city = city,
-                    isFav = favoritesViewModel.isFavorite(city)
+                    isFav = favouriteViewModel.isFavorite(city)
                 ){ c ->
-                    if(favoritesViewModel.isFavorite(c)){
-                        favoritesViewModel.removeFromFavorites(c)
+                    if(favouriteViewModel.isFavorite(c)){
+                        favouriteViewModel.removeFromFavorites(c)
                     } else {
-                        favoritesViewModel.addToFavorites(c)
+                        favouriteViewModel.addToFavorites(c)
                     }
                 }
             }
@@ -60,7 +65,7 @@ fun MainContent(city: City, favoritesViewModel: FavoriteViewModel){
 
             Divider()
 
-            Text(text = "Movie Images", style = MaterialTheme.typography.h5)
+            Text(text = "City Images", style = MaterialTheme.typography.h5)
 
             HorizontalScrollableImageView(city = city)
         }

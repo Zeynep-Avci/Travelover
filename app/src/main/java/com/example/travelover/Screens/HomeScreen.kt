@@ -17,10 +17,13 @@ import androidx.navigation.NavController
 import com.example.travelover.Models.City
 import com.example.travelover.Models.getCities
 import com.example.travelover.Navigation.AppScreens
+import com.example.travelover.ViewModels.FavouriteViewModel
+import com.example.travelover.Widgets.CityRow
+import com.example.travelover.Widgets.FavoriteIcon
 
 
 @Composable
-fun HomeScreen(navController: NavController, viewModel: FavoriteViewModel){
+fun HomeScreen(navController: NavController, viewModel: FavouriteViewModel){
     var showMenu by remember { mutableStateOf(false) }
 
     Scaffold(topBar = {
@@ -34,8 +37,8 @@ fun HomeScreen(navController: NavController, viewModel: FavoriteViewModel){
                     expanded = showMenu,
                     onDismissRequest = { showMenu = false }
                 ) {
-                    DropdownMenuItem(onClick = { navController.navigate(route = AppScreens.FavoritesScreen.name) }) {
-                        Row(modifier = Modifier.clickable { navController.navigate(AppScreens.FavoritesScreen.name) }) {
+                    DropdownMenuItem(onClick = { navController.navigate(route = AppScreens.FavouriteScreen.name) }) {
+                        Row(modifier = Modifier.clickable { navController.navigate(AppScreens.FavouriteScreen.name) }) {
                             Icon(imageVector = Icons.Default.Favorite, contentDescription = "Favorites", modifier = Modifier.padding(4.dp))
                             Text(text = "Favorites", modifier = Modifier
                                 .width(100.dp)
@@ -51,11 +54,11 @@ fun HomeScreen(navController: NavController, viewModel: FavoriteViewModel){
 }
 
 @Composable
-fun MainContent(navController: NavController, favoritesViewModel: FavoriteViewModel, movies: List<City> = getCities()){
+fun MainContent(navController: NavController, favoritesViewModel: FavouriteViewModel, cities: List<City> = getCities()){
     LazyColumn {
-        items(movies){ movie ->
+        items(cities){ city ->
             CityRow(
-                movie = movie,
+                city = city,
                 onItemClick = { cityId -> navController.navigate(AppScreens.DetailScreen.name+"/$cityId")}
             ) {
                 FavoriteIcon(
