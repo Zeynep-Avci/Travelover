@@ -1,5 +1,7 @@
 package com.example.travelover.Widgets
 
+import android.content.ClipDescription
+import android.media.Image
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.background
@@ -72,6 +74,7 @@ fun FavoriteIcon(
     }
 }
 
+
 @OptIn(ExperimentalAnimationApi::class)
 @Preview
 @Composable
@@ -116,7 +119,7 @@ fun CityRow(
                                 androidx.compose.ui.graphics.Color.Transparent,
                                 androidx.compose.ui.graphics.Color.Black
                             ),
-                            startY = 200f
+                            startY = 100f
 
                         )
                     )
