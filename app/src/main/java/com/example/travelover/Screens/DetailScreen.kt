@@ -27,7 +27,7 @@ fun DetailScreen(navController: NavController, favouriteViewModel: FavouriteView
     Scaffold(
         topBar = {
             SimpleTopAppBar(arrowBackClicked = { navController.popBackStack() }) {
-                Text(text = city.title)
+                Text(text = city.name)
             }
         }
     ) {
