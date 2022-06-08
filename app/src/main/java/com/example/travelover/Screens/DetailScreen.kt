@@ -1,10 +1,14 @@
 package com.example.travelover.Screens
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.travelover.Models.City
@@ -17,11 +21,15 @@ import com.example.travelover.Widgets.SimpleTopAppBar
 
 
 fun filterCity(cityId: String?): City {
-    return getCities().filter { it.id == cityId}[0]
+    return getCities().filter { it.id == cityId }[0]
 }
 
 @Composable
-fun DetailScreen(navController: NavController, favouriteViewModel: FavouriteViewModel, cityId: String?){
+fun DetailScreen(
+    navController: NavController,
+    favouriteViewModel: FavouriteViewModel,
+    cityId: String?
+) {
     val city = filterCity(cityId = cityId)
 
     Scaffold(
@@ -31,12 +39,12 @@ fun DetailScreen(navController: NavController, favouriteViewModel: FavouriteView
             }
         }
     ) {
-        MainContent(city = city , favouriteViewModel)
+        MainContent(city = city, favouriteViewModel)
     }
 }
 
 @Composable
-fun MainContent(city: City, favouriteViewModel: FavouriteViewModel){
+fun MainContent(city: City, favouriteViewModel: FavouriteViewModel) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -45,15 +53,16 @@ fun MainContent(city: City, favouriteViewModel: FavouriteViewModel){
 
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Top
+            verticalArrangement = Arrangement.Top,
+            modifier = Modifier.verticalScroll(rememberScrollState())
         ) {
 
             CityRow(city = city) {
                 FavoriteIcon(
                     city = city,
                     isFav = favouriteViewModel.isFavorite(city)
-                ){ c ->
-                    if(favouriteViewModel.isFavorite(c)){
+                ) { c ->
+                    if (favouriteViewModel.isFavorite(c)) {
                         favouriteViewModel.removeFromFavorites(c)
                     } else {
                         favouriteViewModel.addToFavorites(c)
@@ -67,7 +76,20 @@ fun MainContent(city: City, favouriteViewModel: FavouriteViewModel){
 
             Text(text = "City Images", style = MaterialTheme.typography.h5)
 
+
+
             HorizontalScrollableImageView(city = city)
+
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Divider()
+            Text(text = "City Information ", style = MaterialTheme.typography.h5)
+            //TextStyle(contentColorFor(backgroundColor = Color.Gray)
+
+
+            Text(city.cityInfo, style = MaterialTheme.typography.caption)
         }
+
     }
 }
