@@ -7,14 +7,14 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
+    primary = LightBlue,
+    primaryVariant = NormalBlue,
     secondary = Heart
 )
 
 private val LightColorPalette = lightColors(
     primary = NavColor,
-    primaryVariant = Purple700,
+    primaryVariant = NormalBlue,
     secondary = Heart,
     background = BG
     /* Other default colors to override
