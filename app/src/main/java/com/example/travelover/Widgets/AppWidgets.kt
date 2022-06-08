@@ -103,12 +103,14 @@ fun CityRow(
         Box(modifier = Modifier.height(200.dp)) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(city.images[0])
+                    .data(/*city.images[0]*/city.imageRes)
                     .crossfade(true)
                     .build(),
                 contentDescription = "City image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.clip(RectangleShape)
+
+
             )
             Box(
                 modifier = Modifier

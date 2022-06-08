@@ -1,6 +1,10 @@
 package com.example.travelover.Models
 
+
+import com.example.travelover.R
+
 data class City(
+    var imageRes: Int,
     val id: String,
     val name: String,
     val country: String,
@@ -8,9 +12,11 @@ data class City(
     val sights: List<String>,
 )
 
+
 fun getCities(): List<City> {
     return listOf(
         City(
+            imageRes = R.drawable.cairo,
             id = "1",
             name = "Cairo",
             country = "Egypt",
@@ -28,6 +34,7 @@ fun getCities(): List<City> {
             ),
 
         City(
+            imageRes = R.drawable.london,
             id = "2",
             name = "Milan",
             country = "Italy",
@@ -45,6 +52,7 @@ fun getCities(): List<City> {
 
 
         City(
+            imageRes = R.drawable.vienna,
             id = "3",
             name = "Vienna",
             country = "Austria",
@@ -63,6 +71,7 @@ fun getCities(): List<City> {
 
 
         City(
+            imageRes = R.drawable.istanbul,
             id = "4",
             name = "Istanbul",
             country = "Turkey",
@@ -78,38 +87,39 @@ fun getCities(): List<City> {
             ),
         ),
 
-
-            City(
-                id = "5",
-                name = "Venice",
-                country = "Italy",
-                images = listOf(
-                    "https://idsb.tmgrup.com.tr/ly/uploads/images/2020/04/17/thumbs/800x531/31299.jpg",
-                    "https://i.pinimg.com/originals/ea/b3/57/eab35737bc2986c200c576511324237d.jpg",
-                    "https://istanbul-tourist-information.com/wp-content/uploads/2021/02/About-Istanbul.jpg"
-                ),
-                sights = listOf(
-                    "sight1",
-                    "sight2",
-                    "sight3"
-                ),
+        City(
+            imageRes = R.drawable.venice,
+            id = "5",
+            name = "Venice",
+            country = "Italy",
+            images = listOf(
+                "https://idsb.tmgrup.com.tr/ly/uploads/images/2020/04/17/thumbs/800x531/31299.jpg",
+                "https://i.pinimg.com/originals/ea/b3/57/eab35737bc2986c200c576511324237d.jpg",
+                "https://istanbul-tourist-information.com/wp-content/uploads/2021/02/About-Istanbul.jpg"
             ),
-
-            City(
-                id = "6",
-                name = "Kyoto",
-                country = "Japan",
-                images = listOf(
-                    "https://idsb.tmgrup.com.tr/ly/uploads/images/2020/04/17/thumbs/800x531/31299.jpg",
-                    "https://i.pinimg.com/originals/ea/b3/57/eab35737bc2986c200c576511324237d.jpg",
-                    "https://istanbul-tourist-information.com/wp-content/uploads/2021/02/About-Istanbul.jpg"
-                ),
-                sights = listOf(
-                    "sight1",
-                    "sight2",
-                    "sight3"
-                ),
+            sights = listOf(
+                "sight1",
+                "sight2",
+                "sight3"
             ),
+        ),
+
+        City(
+            imageRes = R.drawable.kyoto,
+            id = "6",
+            name = "Kyoto",
+            country = "Japan",
+            images = listOf(
+                "https://idsb.tmgrup.com.tr/ly/uploads/images/2020/04/17/thumbs/800x531/31299.jpg",
+                "https://i.pinimg.com/originals/ea/b3/57/eab35737bc2986c200c576511324237d.jpg",
+                "https://istanbul-tourist-information.com/wp-content/uploads/2021/02/About-Istanbul.jpg"
+            ),
+            sights = listOf(
+                "sight1",
+                "sight2",
+                "sight3"
+            ),
+        ),
 
         )
 
