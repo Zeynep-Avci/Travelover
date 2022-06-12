@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.travelover.Models.City
 import com.example.travelover.Models.getCities
+import com.example.travelover.Navigation.AppScreens
 import com.example.travelover.ViewModels.FavouriteViewModel
 import com.example.travelover.Widgets.CityRow
 import com.example.travelover.Widgets.FavoriteIcon
@@ -39,12 +40,12 @@ fun DetailScreen(
             }
         }
     ) {
-        MainContent(city = city, favouriteViewModel)
+        MainContent(navController, city = city, favouriteViewModel)
     }
 }
 
 @Composable
-fun MainContent(city: City, favouriteViewModel: FavouriteViewModel) {
+fun MainContent(navController: NavController, city: City, favouriteViewModel: FavouriteViewModel) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -57,7 +58,10 @@ fun MainContent(city: City, favouriteViewModel: FavouriteViewModel) {
             modifier = Modifier.verticalScroll(rememberScrollState())
         ) {
 
-            CityRow(city = city) {
+            CityRow(
+                city = city,
+                onItemClick = { cityId -> navController.navigate(AppScreens.SightsScreen.name+"/$cityId")}
+            ) {
                 FavoriteIcon(
                     city = city,
                     isFav = favouriteViewModel.isFavorite(city)
@@ -75,7 +79,6 @@ fun MainContent(city: City, favouriteViewModel: FavouriteViewModel) {
             Divider()
 
             Text(text = "City Images", style = MaterialTheme.typography.h5)
-
 
 
             HorizontalScrollableImageView(city = city)

@@ -1,17 +1,14 @@
 package com.example.travelover.Widgets
 
-import android.content.ClipDescription
-import android.graphics.fonts.FontStyle
-import android.media.Image
-import androidx.compose.animation.AnimatedVisibility
+
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.foundation.BorderStroke
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
@@ -22,22 +19,26 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.BlendMode.Companion.Color
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.*
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shadow
+import androidx.compose.ui.unit.lerp
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.travelover.Models.City
+import com.example.travelover.Models.Sight
 import com.example.travelover.Models.getCities
+import com.example.travelover.Models.getSights
+import com.example.travelover.R
+import com.google.accompanist.pager.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.yield
+import kotlin.math.absoluteValue
 
 @Composable
 fun SimpleTopAppBar(arrowBackClicked: () -> Unit = {}, content: @Composable () -> Unit) {
@@ -187,3 +188,85 @@ fun HorizontalScrollableImageView(city: City) {
         }
     }
 }
+
+@Composable
+fun HorizontalScrollableSightsView(
+    sight: Sight
+) {
+
+    LazyRow {
+        items(sight.sight_images) { image ->
+            Card(
+                //border = BorderStroke(1.dp, androidx.compose.ui.graphics.Color.Black) ,
+                modifier = Modifier
+                    .padding(4.dp)
+                    .fillMaxHeight()
+                    .fillMaxWidth(),
+
+
+                shape = RoundedCornerShape(corner = CornerSize(16.dp)),
+                elevation = 6.dp
+            ) {
+
+                Box(modifier = Modifier.height(200.dp)) {
+                    AsyncImage(
+                        model = ImageRequest.Builder(LocalContext.current)
+                            .data(image)
+                            .crossfade(true)
+                            .build(),
+                        contentDescription = "City famous sight image",
+                        //contentScale = ContentScale.FillBounds,
+                        //modifier = Modifier.clip(RectangleShape)
+
+
+                    )
+                }
+                //content()
+            }
+        }
+    }
+}
+
+/*
+
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        LazyRow(
+            state = listState, modifier = Modifier
+                .background(androidx.compose.ui.graphics.Color.Yellow),
+               // .wrapContentHeight()
+                //.fillMaxWidth(),
+            contentPadding = PaddingValues(12.dp),
+            //verticalArrangement = Arrangement.spacedBy(5.dp)
+        ) {
+            items(sight.sight_images) { image ->
+                Card(
+                    modifier = Modifier
+                        .padding(12.dp)
+                        .fillMaxHeight()
+                        .fillMaxWidth(),
+                    elevation = 4.dp
+                ) {
+                    Column(
+                        modifier = Modifier.padding(3.dp)
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            AsyncImage(
+                                model = ImageRequest.Builder(LocalContext.current)
+                                    .data(image)
+                                    .crossfade(true)
+                                    .build(),
+                                contentDescription = "City famous sight image",
+                                //contentScale = ContentScale.Crop
+                            )
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+}*/
+

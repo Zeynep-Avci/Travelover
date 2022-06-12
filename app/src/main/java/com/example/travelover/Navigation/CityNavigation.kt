@@ -10,6 +10,7 @@ import androidx.navigation.navArgument
 import com.example.travelover.Screens.DetailScreen
 import com.example.travelover.Screens.HomeScreen
 import com.example.travelover.Screens.FavouriteScreen
+import com.example.travelover.Screens.SightsScreen
 import com.example.travelover.ViewModels.FavouriteViewModel
 
 
@@ -37,7 +38,19 @@ fun CityNavigation(){
             DetailScreen(
                 navController = navController,
                 favouriteViewModel,
-                cityId = navBackStackEntry.arguments?.getString("cityId") // pass the value of movieId argument to the DetailScreen composable
+                cityId = navBackStackEntry.arguments?.getString("cityId") // pass the value of cityId argument to the DetailScreen composable
+            )
+        }
+        composable(
+            route = AppScreens.SightsScreen.name+"/{sightId}",// placeholder for arguments
+            arguments = listOf(navArgument(name = "sightId"){   // define arguments that can be passed
+                type = NavType.StringType
+            })) { navBackStackEntry ->
+
+            SightsScreen(
+                navController = navController,
+                favouriteViewModel,
+                sightId = navBackStackEntry.arguments?.getString("sightId") // pass the value of cityId argument to the DetailScreen composable
             )
         }
     }
