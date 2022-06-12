@@ -22,6 +22,7 @@ import com.example.travelover.Navigation.AppScreens
 import com.example.travelover.ViewModels.FavouriteViewModel
 import com.example.travelover.Widgets.CityRow
 import com.example.travelover.Widgets.FavoriteIcon
+import com.example.travelover.ui.theme.LogoPink
 
 
 @Composable
@@ -41,7 +42,7 @@ fun HomeScreen(navController: NavController, viewModel: FavouriteViewModel){
                 ) {
                     DropdownMenuItem(onClick = { navController.navigate(route = AppScreens.FavouriteScreen.name) }) {
                         Row(modifier = Modifier.clickable { navController.navigate(AppScreens.FavouriteScreen.name) }) {
-                            Icon(imageVector = Icons.Default.Favorite, contentDescription = "Favorites", modifier = Modifier.padding(4.dp))
+                            Icon(imageVector = Icons.Default.Favorite, contentDescription = "Favorites", modifier = Modifier.padding(4.dp), tint = LogoPink)
                             Text(text = "Favorites", modifier = Modifier
                                 .width(100.dp)
                                 .padding(4.dp))
