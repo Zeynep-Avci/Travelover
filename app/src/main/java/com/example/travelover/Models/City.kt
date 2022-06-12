@@ -17,7 +17,7 @@ data class City(
 fun getCities(): List<City> {
     return listOf(
         City(
-            imageRes = R.drawable.cairo,
+            imageRes = R.drawable.cairodark,
             id = "1",
             name = "Cairo",
             country = "Egypt",
@@ -40,7 +40,7 @@ fun getCities(): List<City> {
             ),
 
         City(
-            imageRes = R.drawable.london,
+            imageRes = R.drawable.londondark,
             id = "2",
             name = "London",
             country = "United Kingdom",
@@ -65,7 +65,7 @@ fun getCities(): List<City> {
 
 
         City(
-            imageRes = R.drawable.vienna,
+            imageRes = R.drawable.viennadark,
             id = "3",
             name = "Vienna",
             country = "Austria",
@@ -92,7 +92,7 @@ fun getCities(): List<City> {
 
 
         City(
-            imageRes = R.drawable.istanbul,
+            imageRes = R.drawable.istanbuldark,
             id = "4",
             name = "Istanbul",
             country = "Turkey",
@@ -114,7 +114,7 @@ fun getCities(): List<City> {
         ),
 
         City(
-            imageRes = R.drawable.venice,
+            imageRes = R.drawable.venicedark,
             id = "5",
             name = "Venice",
             country = "Italy",
@@ -132,7 +132,7 @@ fun getCities(): List<City> {
         ),
 
         City(
-            imageRes = R.drawable.kyoto,
+            imageRes = R.drawable.kyotodark,
             id = "6",
             name = "Kyoto",
             country = "Japan",
