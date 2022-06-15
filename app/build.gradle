@@ -68,5 +68,6 @@ dependencies {
     //ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
 
-
+    //SplashScreen
+    implementation "androidx.core:core-splashscreen:$splashscreen_version"
 }
