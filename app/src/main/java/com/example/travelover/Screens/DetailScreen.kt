@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.travelover.Models.City
 import com.example.travelover.Models.getCities
@@ -19,6 +20,7 @@ import com.example.travelover.Widgets.CityRow
 import com.example.travelover.Widgets.FavoriteIcon
 import com.example.travelover.Widgets.HorizontalScrollableImageView
 import com.example.travelover.Widgets.SimpleTopAppBar
+import com.example.travelover.ui.theme.GreyFont
 
 
 fun filterCity(cityId: String?): City {
@@ -90,8 +92,9 @@ fun MainContent(navController: NavController, city: City, favouriteViewModel: Fa
             Text(text = "City Information ", style = MaterialTheme.typography.h5)
             //TextStyle(contentColorFor(backgroundColor = Color.Gray)
 
+            Spacer(modifier = Modifier.height(3.dp))
 
-            Text(city.cityInfo, style = MaterialTheme.typography.caption)
+            Text(city.cityInfo, fontSize = 18.sp, color = GreyFont, modifier = Modifier.padding(horizontal = 20.dp))
         }
 
     }
