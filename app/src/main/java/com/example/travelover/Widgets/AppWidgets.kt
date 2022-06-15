@@ -35,7 +35,6 @@ import com.example.travelover.Models.Sight
 import com.example.travelover.Models.getCities
 import com.example.travelover.Models.getSights
 import com.example.travelover.R
-import com.google.accompanist.pager.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.yield
 import kotlin.math.absoluteValue
@@ -89,10 +88,6 @@ fun CityRow(
     onItemClick: (String) -> Unit = {},
     content: @Composable () -> Unit = {}
 ) {
-
-    var expanded by remember {
-        mutableStateOf(false)
-    }
 
     Card(
         //border = BorderStroke(1.dp, androidx.compose.ui.graphics.Color.Black) ,
