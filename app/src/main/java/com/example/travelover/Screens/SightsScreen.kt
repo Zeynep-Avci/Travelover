@@ -14,12 +14,15 @@ import com.example.travelover.Models.Sight
 import com.example.travelover.Models.getSights
 import com.example.travelover.ViewModels.FavouriteViewModel
 import com.example.travelover.Widgets.*
+import com.example.travelover.ui.theme.TraveloverTheme
+import com.google.accompanist.pager.ExperimentalPagerApi
 
 
 fun filterSights(sightId: String?): Sight {
-    return getSights().filter { it.id == sightId}[0]
+    return getSights().filter { it.id == sightId }[0]
 }
 
+@OptIn(ExperimentalPagerApi::class)
 @Composable
 fun SightsScreen(
     navController: NavController,
@@ -35,12 +38,13 @@ fun SightsScreen(
             }
         }
     ) {
-        MainContent(navController, sight = sight , favouriteViewModel)
+        MainContent(navController,favouriteViewModel, sight = sight)
     }
 }
 
+@ExperimentalPagerApi
 @Composable
-fun MainContent(navController: NavController, sight: Sight, favouriteViewModel: FavouriteViewModel){
+fun MainContent(navController: NavController,favouriteViewModel: FavouriteViewModel, sight: Sight) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -58,12 +62,15 @@ fun MainContent(navController: NavController, sight: Sight, favouriteViewModel: 
 
             Divider()
 
-            Text(text = "Pictures", style = MaterialTheme.typography.h5)
+            //Text(text = "Pictures", style = MaterialTheme.typography.h5)
 
-            HorizontalScrollableSightsView(sight = sight)
-            Spacer(modifier = Modifier.height(8.dp))
+            SightsImageSlider(sight = sight)
 
-            Divider()
+
+                //Spacer(modifier = Modifier.height(8.dp))
+
+                //Divider()
+            }
         }
     }
-}
+
