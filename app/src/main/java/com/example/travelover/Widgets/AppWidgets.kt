@@ -88,7 +88,7 @@ fun FavoriteIcon(
 }
 
 
-@OptIn(ExperimentalAnimationApi::class)
+//@OptIn(ExperimentalAnimationApi::class)
 @Preview
 @Composable
 fun CityRow(
@@ -167,7 +167,6 @@ fun CityRow(
     }
 }
 
-
 @Composable
 fun HorizontalScrollableImageView(city: City) {
     LazyRow {
@@ -234,7 +233,6 @@ fun SightsImageSlider(sight: Sight) {
         }
 
 
-
         /*HorizontalPager(
             state = pagerState,
             modifier = Modifier
@@ -261,12 +259,12 @@ fun SightsImageSlider(sight: Sight) {
         ) {
             //val natural = sight[page]
             val displaySight = getSights()*/
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(LogoPink)
-                    .align(Alignment.CenterHorizontally)
-            ) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(LogoPink)
+                .align(Alignment.CenterHorizontally)
+        ) {
 
 /*
                     Image(
@@ -284,49 +282,50 @@ fun SightsImageSlider(sight: Sight) {
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.fillMaxSize()
                     )*/
-                LazyRow {
-                    items(sight.sight_images) { image ->
-                        Card(
-                            //border = BorderStroke(1.dp, androidx.compose.ui.graphics.Color.Black) ,
-                            modifier = Modifier
-                                .padding(6.dp)
-                                .fillMaxSize()
-                                .padding(15.dp, 0.dp, 15.dp, 0.dp),
+            LazyRow {
+                items(sight.sight_images) { image ->
+                    Card(
+                        //border = BorderStroke(1.dp, androidx.compose.ui.graphics.Color.Black) ,
+                        modifier = Modifier
+                            .padding(6.dp)
+                            .fillMaxSize()
+                            .padding(15.dp, 0.dp, 15.dp, 0.dp),
 
 
-                            shape = RoundedCornerShape(corner = CornerSize(16.dp)),
-                            elevation = 6.dp
-                        ) {
+                        shape = RoundedCornerShape(corner = CornerSize(16.dp)),
+                        elevation = 6.dp
+                    ) {
 
-                            Box(modifier = Modifier.height(450.dp).width(350.dp)) {
-                                AsyncImage(
-                                    model = ImageRequest.Builder(LocalContext.current)
-                                        .data(image)
-                                        .crossfade(true)
-                                        .build(),
-                                    contentDescription = "City famous sight image",
-                                    contentScale = ContentScale.Crop,
-                                    modifier = Modifier.fillMaxSize()
+                        Box(modifier = Modifier
+                            .height(450.dp)
+                            .width(350.dp)) {
+                            AsyncImage(
+                                model = ImageRequest.Builder(LocalContext.current)
+                                    .data(image)
+                                    .crossfade(true)
+                                    .build(),
+                                contentDescription = "City famous sight image",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier.fillMaxSize()
 
 
-
-                                )
-                            }
-                            //content()
+                            )
                         }
+                        //content()
                     }
                 }
-                Column(
-                    modifier = Modifier
-                        .align(Alignment.BottomStart)
-                        .padding(15.dp)
-                ) {
-                    Text(
-                        text = sight.sight_name,
-                        style = MaterialTheme.typography.h5,
-                        color = Color.White,
-                        fontWeight = FontWeight.Bold
-                    )
+            }
+            Column(
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .padding(15.dp)
+            ) {
+                Text(
+                    text = sight.sight_name,
+                    style = MaterialTheme.typography.h5,
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold
+                )
 /*
                     val ratingBar = RatingBar(
                         LocalContext.current, null,// R.attr.ratingBarStyleSmall
@@ -342,17 +341,79 @@ fun SightsImageSlider(sight: Sight) {
                         modifier = Modifier.padding(0.dp, 8.dp, 0.dp, 0.dp)
                     )*/
 
-                    Text(
-                        text = sight.desc,
-                        style = MaterialTheme.typography.body1,
-                        color = Color.White,
-                        fontWeight = FontWeight.Normal,
-                        modifier = Modifier.padding(0.dp, 8.dp, 0.dp, 0.dp)
-                    )
-                }
+                Text(
+                    text = sight.desc,
+                    style = MaterialTheme.typography.body1,
+                    color = Color.White,
+                    fontWeight = FontWeight.Normal,
+                    modifier = Modifier.padding(0.dp, 8.dp, 0.dp, 0.dp)
+                )
             }
         }
     }
+}
+
+
+//Function for famous sights of the shown city -> takes to SightsScreen
+@Preview
+@Composable
+fun SightsRow(
+    sight: Sight = getSights()[0],
+    onItemClick: (String) -> Unit = {},
+    content: @Composable () -> Unit = {}
+) {
+    Card(
+        //border = BorderStroke(1.dp, androidx.compose.ui.graphics.Color.Black) ,
+        modifier = Modifier
+            .padding(4.dp)
+            .fillMaxWidth()
+            .clickable
+            {
+                onItemClick(sight.id)
+            },
+        shape = RoundedCornerShape(corner = CornerSize(16.dp)),
+        elevation = 6.dp
+    ) {
+
+        Box(modifier = Modifier.fillMaxSize()) {
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(sight.sight_bg)
+                    .crossfade(true)
+                    .build(),
+                contentDescription = "Sight image",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.clip(RectangleShape)
+
+
+            )
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(3.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "Top Sightseeing places",
+                    style = TextStyle(
+                        fontSize = 25.sp,
+                        color = Color.White,
+                        shadow = Shadow(
+                            color = Color.Black,
+                            offset = Offset(0f, 0f),
+                            blurRadius = 20f
+                        )
+                    )
+                )
+            }
+
+
+        }
+
+        content()
+
+    }
+}
 
 
 

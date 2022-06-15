@@ -1,5 +1,7 @@
 package com.example.travelover.Screens
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -16,10 +18,9 @@ import com.example.travelover.Models.City
 import com.example.travelover.Models.getCities
 import com.example.travelover.Navigation.AppScreens
 import com.example.travelover.ViewModels.FavouriteViewModel
-import com.example.travelover.Widgets.CityRow
-import com.example.travelover.Widgets.FavoriteIcon
-import com.example.travelover.Widgets.HorizontalScrollableImageView
-import com.example.travelover.Widgets.SimpleTopAppBar
+import com.example.travelover.Widgets.*
+import com.example.travelover.ui.theme.Heart
+import com.example.travelover.ui.theme.NormalBlue
 import com.example.travelover.ui.theme.GreyFont
 
 
@@ -47,11 +48,12 @@ fun DetailScreen(
 }
 
 @Composable
-fun MainContent(navController: NavController, city: City, favouriteViewModel: FavouriteViewModel) {
+fun MainContent(navController: NavController, city: City, favouriteViewModel: FavouriteViewModel, onItemClick: (String) -> Unit = {}) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
+
     ) {
 
         Column(
@@ -62,7 +64,7 @@ fun MainContent(navController: NavController, city: City, favouriteViewModel: Fa
 
             CityRow(
                 city = city,
-                onItemClick = { cityId -> navController.navigate(AppScreens.SightsScreen.name+"/$cityId")}
+                //onItemClick = { cityId -> navController.navigate(AppScreens.SightsScreen.name+"/$cityId")}
             ) {
                 FavoriteIcon(
                     city = city,
@@ -95,6 +97,25 @@ fun MainContent(navController: NavController, city: City, favouriteViewModel: Fa
             Spacer(modifier = Modifier.height(3.dp))
 
             Text(city.cityInfo, fontSize = 18.sp, color = GreyFont, modifier = Modifier.padding(horizontal = 20.dp))
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            Divider()
+/*
+            Column(
+                modifier = Modifier.height(100.dp).width(400.dp)
+                    .background(NormalBlue)
+                    .clickable
+                    {
+                        onItemClick(city.name)
+                    },
+                     ) {
+                Text(text = "Famous Sights in " + city.name, style = MaterialTheme.typography.h4)
+            }
+*/
+            SightsRow(
+                onItemClick = { cityId -> navController.navigate(AppScreens.SightsScreen.name+"/$cityId")}
+            )
         }
 
     }

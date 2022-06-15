@@ -22,7 +22,7 @@ fun filterSights(sightId: String?): Sight {
     return getSights().filter { it.id == sightId }[0]
 }
 
-@OptIn(ExperimentalPagerApi::class)
+//@OptIn(ExperimentalPagerApi::class)
 @Composable
 fun SightsScreen(
     navController: NavController,
@@ -38,13 +38,17 @@ fun SightsScreen(
             }
         }
     ) {
-        MainContent(navController,favouriteViewModel, sight = sight)
+        MainContent(navController, favouriteViewModel, sight = sight)
     }
 }
 
-@ExperimentalPagerApi
+//@ExperimentalPagerApi
 @Composable
-fun MainContent(navController: NavController,favouriteViewModel: FavouriteViewModel, sight: Sight) {
+fun MainContent(
+    navController: NavController,
+    favouriteViewModel: FavouriteViewModel,
+    sight: Sight
+) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -67,10 +71,10 @@ fun MainContent(navController: NavController,favouriteViewModel: FavouriteViewMo
             SightsImageSlider(sight = sight)
 
 
-                //Spacer(modifier = Modifier.height(8.dp))
+            //Spacer(modifier = Modifier.height(8.dp))
 
-                //Divider()
-            }
+            //Divider()
         }
     }
+}
 
