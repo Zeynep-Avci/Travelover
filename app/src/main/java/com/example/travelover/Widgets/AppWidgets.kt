@@ -1,6 +1,7 @@
 package com.example.travelover.Widgets
 
 
+import android.content.Context
 import android.graphics.PorterDuff
 import android.widget.RatingBar
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -26,6 +27,8 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.platform.UriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -308,7 +311,9 @@ fun SightsImageSlider(sight: Sight) {
                         }
                         //content()
                     }
+
                 }
+
             }
             Column(
                 modifier = Modifier
@@ -405,6 +410,61 @@ fun SightsRow(
         }
 
         content()
+
+    }
+}
+
+@Composable
+fun Ticket(
+    city: City = getCities()[0],
+    onItemClick: (Unit) -> Unit = {}
+) {
+    val uriHandler = LocalUriHandler.current
+    Card(
+        //border = BorderStroke(1.dp, androidx.compose.ui.graphics.Color.Black) ,
+        modifier = Modifier
+            .padding(4.dp)
+            .fillMaxWidth()
+            .clickable
+            {
+                onItemClick(uriHandler.openUri(city.ticketlink))
+            },
+        shape = RoundedCornerShape(corner = CornerSize(16.dp)),
+        elevation = 6.dp
+    ) {
+
+        Box(modifier = Modifier.height(150.dp)) {
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(R.drawable.ticcket)
+                    .crossfade(true)
+                    .build(),
+                contentDescription = "Ticket",
+                contentScale = ContentScale.FillWidth,
+                modifier = Modifier.clip(RectangleShape)
+            )
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(3.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "Ticket",
+                    style = TextStyle(
+                        fontSize = 55.sp,
+                        color = Color.White,
+                        shadow = Shadow(
+                            color = Color.Black,
+                            offset = Offset(0f, 0f),
+                            blurRadius = 20f
+                        )
+                    )
+                )
+            }
+
+
+        }
 
     }
 }

@@ -118,6 +118,11 @@ fun MainContent(navController: NavController, city: City, favouriteViewModel: Fa
                 city = city,
                 onItemClick = { sightId -> navController.navigate(AppScreens.SightsScreen.name+"/$sightId")}
             )
+
+
+            Ticket(
+                city = city
+            )
         }
 
     }

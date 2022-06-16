@@ -8,9 +8,11 @@ data class City(
     val id: String,
     val name: String,
     val country: String,
+    val ticketlink: String,
     val images: List<String>,
     val cityInfo: String,
     val sights: List<String>,
+
 )
 
 
@@ -21,6 +23,7 @@ fun getCities(): List<City> {
             id = "1",
             name = "Cairo",
             country = "Egypt",
+            ticketlink = "https://www.opodo.de/fluege/kairo/CAI/?mktportal=google&utm_id=go_cmp-15760118397_adg-138548293624_ad-572994719196_kwd-319716010485_dev-c_ext-_locphy-9062725_mtype-e_ntw-g&gclid=CjwKCAjwqauVBhBGEiwAXOepkdTPbw1GvX8VXIxzmfLRIMFuSWpw15LDZz6nQ3vhUNqlUgXLxtj4xhoCrsMQAvD_BwE#/",
             images = listOf(
                 "https://th-thumbnailer.cdn-si-edu.com/g9z9K0sUUuXCxjaIjb6Pcji1G2w=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/94/3b/943b17ca-2115-42bb-85b0-28b9333361d6/oct2015_d06_pyramids.jpg",
                 "https://www.maciejdakowicz.com/wp-content/uploads/2021/01/nggallery_import/egypt_cairo_africa_giza_pyramids_visitoris_tourists_sphinx.jpg",
@@ -46,6 +49,7 @@ fun getCities(): List<City> {
             id = "2",
             name = "London",
             country = "United Kingdom",
+            ticketlink = "https://www.opodo.de/fluege/wien-london/VIE/LON/?mktportal=google&utm_id=go_cmp-17063927654_adg-133895867177_ad-502908083454_dsa-1186529312107_dev-c_ext-166624771733_locphy-9062725_mtype-_ntw-g&gclid=CjwKCAjwqauVBhBGEiwAXOepkas5xCuHZhLDkKYZu0k-RUthcEzm1cJqQmJVwB_Bhka1LwnTo0OdFxoCjvcQAvD_BwE#/",
             images = listOf(
                 "https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/outdoors/parks/national-maritime-museum-in-spring-1920.jpg?mw=640&hash=C7C138BAEE9139A0519EAE88846407DF85324F18",
                 "https://media.gettyimages.com/photos/london-phone-booth-with-westminster-abbey-behind-picture-id152890717?s=612x612",
@@ -73,6 +77,7 @@ fun getCities(): List<City> {
             id = "3",
             name = "Vienna",
             country = "Austria",
+            ticketlink = "https://www.opodo.de/fluege/wien/VIE/#/",
             images = listOf(
                 "https://www.viennasightseeing.at//application/themes/vienna/images/sampleimg-medium.jpg",
                 "https://www.viennapass.de/fileadmin/_processed_/7/3/csm_300dpi_N0A3398_Palisis-min_be4e2f62e4.jpg",
@@ -102,6 +107,7 @@ fun getCities(): List<City> {
             id = "4",
             name = "Istanbul",
             country = "Turkey",
+            ticketlink = "https://www.opodo.de/fluege/istanbul/IST/?mktportal=google&utm_id=go_cmp-15763804696_adg-133409522602_ad-573126741596_kwd-300191566043_dev-c_ext-_locphy-9062725_mtype-e_ntw-g&gclid=CjwKCAjwqauVBhBGEiwAXOepkdyT5J0CflVmiXxA_TwElJzeuP_dBr0rhyFXYNEd5YJVga0WV8WapxoCG0gQAvD_BwE#/",
             images = listOf(
                 "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/3a/2c/dd/istanbul-36h-basilica.jpg?w=1200&h=1200&s=1",
                 "https://www.lilies-diary.com/wp-content/uploads/2014/05/Istanbul-Kaffeet%C3%BCrkisch1.jpg",
@@ -126,6 +132,7 @@ fun getCities(): List<City> {
             id = "5",
             name = "Venice",
             country = "Italy",
+            ticketlink = "https://www.opodo.de/fluege/venedig/VCE/#/",
             images = listOf(
                 "https://www.globeair.com/assets/destinations/iStock-520638929.jpg",
                 "https://www.hotelcanalgrande.it/wp-content/uploads/2016/01/carnival-venice.jpg",
@@ -146,6 +153,7 @@ fun getCities(): List<City> {
             id = "6",
             name = "Kyoto",
             country = "Japan",
+            ticketlink = "https://www.opodo.de/fluege/wien-tokio/VIE/TYO/#/",
             images = listOf(
                 "https://cdn.getyourguide.com/img/tour/600130355bd92.jpeg/99.jpg",
                 "https://homeiswhereyourbagis.com/wp-content/uploads/2020/04/Kyoto-Fushimi-Inari-Taisha-Schrein-01-1024x576.jpg",
