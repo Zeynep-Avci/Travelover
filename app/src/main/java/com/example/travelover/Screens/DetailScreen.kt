@@ -111,6 +111,7 @@ fun MainContent(navController: NavController, city: City, favouriteViewModel: Fa
                     },
                      ) {
                 Text(text = "Famous Sights in " + city.name, style = MaterialTheme.typography.h4)
+                Text(text = "Famous Sights in " + city.name, style = MaterialTheme.typography.h4)
             }
 */
             SightsRow(

@@ -20,7 +20,7 @@ fun getSights(): List<Sight> {
             "1",
             "Cairo",
             "",
-            listOf(
+            sight_images = listOf(
                 "https://thirdeyetraveller.com/wp-content/uploads/Facetune_24-11-2018-11-09-07.jpg",
                 "https://images.unsplash.com/photo-1560253653-8395b9b427b7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE2MDExMn0",
                 "https://attenvo.com/blog/wp-content/uploads/2022/04/photo-1619969184277-4413e0b147f7-576x1024.jpeg",
@@ -35,7 +35,7 @@ fun getSights(): List<Sight> {
             "2",
             "London",
             "",
-            listOf(
+            sight_images = listOf(
                 "https://www.planetware.com/photos-large/ENG/london-top-attractions-hyde-park.jpg",
                 "https://www.planetware.com/photos-large/ENG/london-south-bank-london-eye-2.jpg",
                 "https://www.planetware.com/photos-large/ENG/london-top-attractions-tower-of-london.jpg",
@@ -50,7 +50,7 @@ fun getSights(): List<Sight> {
             "3",
             "Vienna",
             "",
-            listOf(
+            sight_images = listOf(
                 "https://www.planetware.com/wpimages/2019/12/austria-vienna-top-attractions-things-to-do-schonbrunn-palace-gardens.jpg",
                 "https://www.planetware.com/photos-large/A/hofburg-0.jpg",
                 "https://www.planetware.com/photos-large/A/vienna-opera-house-0.jpg",
@@ -65,7 +65,7 @@ fun getSights(): List<Sight> {
             "4",
             "Istanbul",
             "",
-            listOf(
+            sight_images = listOf(
                 "https://www.planetware.com/photos-large/TR/turkey-istanbul-aya-sofya.jpg",
                 "https://www.planetware.com/wpimages/2021/10/turkey-istanbul-top-attractions-visit-blue-mosque.jpg",
                 "https://www.planetware.com/photos-large/TR/turkey-istanbul-lantern-display-grand-bazaar.jpg",
@@ -80,7 +80,7 @@ fun getSights(): List<Sight> {
             "5",
             "Venice",
             "",
-            listOf(
+            sight_images = listOf(
                 "https://www.planetware.com/photos-large/I/italy-venice-canale-grande-3.jpg",
                 "https://www.planetware.com/wpimages/2022/03/italy-venice-top-attractions-things-to-do-santa-maria-della-salute.jpg",
                 "https://www.planetware.com/photos-large/I/italy-venice-st-marks-square.jpg",
@@ -95,7 +95,7 @@ fun getSights(): List<Sight> {
             "6",
             "Kyoto",
             "",
-            listOf(
+            sight_images = listOf(
                 "https://www.planetware.com/photos-large/JPN/japan-kyoto-nijo-castle.jpg",
                 "https://www.planetware.com/wpimages/2020/09/japan-kyoto-top-attractions-kiyomizu-dera-temple.jpg",
                 "https://www.planetware.com/photos-large/JPN/japan-kyoto-kinkaku-ji-golden-pavilion.jpg",

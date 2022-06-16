@@ -371,10 +371,10 @@ fun SightsRow(
         elevation = 6.dp
     ) {
 
-        Box(modifier = Modifier.height(200.dp)) {
+        Box(modifier = Modifier.height(150.dp)) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(R.drawable.darkgoogle)
+                    .data(R.drawable.sightsgirl)
                     .crossfade(true)
                     .build(),
                 contentDescription = "Sight image",
