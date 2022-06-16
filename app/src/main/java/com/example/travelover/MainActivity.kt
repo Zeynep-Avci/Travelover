@@ -14,7 +14,6 @@ import com.example.travelover.Navigation.CityNavigation
 import com.example.travelover.ViewModels.SplashScreenViewModel
 import com.example.travelover.Widgets.SightsImageSlider
 import com.example.travelover.ui.theme.TraveloverTheme
-import com.google.accompanist.pager.ExperimentalPagerApi
 
 
 class MainActivity : ComponentActivity() {

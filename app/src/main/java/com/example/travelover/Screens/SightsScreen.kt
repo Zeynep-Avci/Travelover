@@ -15,7 +15,6 @@ import com.example.travelover.Models.getSights
 import com.example.travelover.ViewModels.FavouriteViewModel
 import com.example.travelover.Widgets.*
 import com.example.travelover.ui.theme.TraveloverTheme
-import com.google.accompanist.pager.ExperimentalPagerApi
 
 
 fun filterSights(sightId: String?): Sight {
@@ -38,17 +37,13 @@ fun SightsScreen(
             }
         }
     ) {
-        MainContent(navController, favouriteViewModel, sight = sight)
+        MainContent(navController, sight = sight, favouriteViewModel)
     }
 }
 
-//@ExperimentalPagerApi
+
 @Composable
-fun MainContent(
-    navController: NavController,
-    favouriteViewModel: FavouriteViewModel,
-    sight: Sight
-) {
+fun MainContent(navController: NavController, sight: Sight,favouriteViewModel: FavouriteViewModel) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -62,19 +57,19 @@ fun MainContent(
         ) {
 
 
-            Spacer(modifier = Modifier.height(8.dp))
+            //Spacer(modifier = Modifier.height(8.dp))
 
-            Divider()
+            //Divider()
 
             //Text(text = "Pictures", style = MaterialTheme.typography.h5)
 
             SightsImageSlider(sight = sight)
 
 
-            //Spacer(modifier = Modifier.height(8.dp))
+                //Spacer(modifier = Modifier.height(8.dp))
 
-            //Divider()
+                //Divider()
+            }
         }
     }
-}
 

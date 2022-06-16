@@ -19,9 +19,9 @@ fun getSights(): List<Sight> {
             "Cairo",
             "",
             listOf(
-                "https://www.planetware.com/photos-large/EGY/egypt-cairo-pyramids-and-camels.jpg",
-                "https://www.planetware.com/wpimages/2021/05/egypt-cairo-egyptian-museum-exterior.jpg",
-                "https://www.planetware.com/photos-large/EGY/egypt-cairo-al-azhar-mosque.jpg",
+                "https://thirdeyetraveller.com/wp-content/uploads/Facetune_24-11-2018-11-09-07.jpg",
+                "https://images.unsplash.com/photo-1560253653-8395b9b427b7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE2MDExMn0",
+                "https://attenvo.com/blog/wp-content/uploads/2022/04/photo-1619969184277-4413e0b147f7-576x1024.jpeg",
                 "https://www.planetware.com/wpimages/2021/04/egypt-cairo-top-attractions-shop-amid-maze-khan-el-khalili.jpg"
             ),
             4.0f,

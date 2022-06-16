@@ -34,14 +34,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.lerp
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
-import androidx.compose.ui.util.lerp
 import androidx.compose.ui.viewinterop.AndroidView
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.travelover.Models.*
 import com.example.travelover.R
 import com.example.travelover.ui.theme.LogoPink
-import com.google.accompanist.pager.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.yield
 import kotlin.math.absoluteValue
@@ -213,22 +211,21 @@ fun SightsImageSlider(sight: Sight) {
      }*/
 
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxWidth().fillMaxHeight()
     ) {
         //column for title Box at the top
         Column(
             modifier = Modifier
-                .height(50.dp)
-                .fillMaxWidth()
-                .background(LogoPink),
+                .height(40.dp)
+                .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
             Text(
                 text = "Famous Sights",
-                color = Color.White,
-                fontSize = 30.sp,
-                fontWeight = FontWeight.Bold
+                color = Color.Black,
+                fontSize = 30.sp
+                //fontWeight = FontWeight.Bold
             )
         }
 
@@ -259,14 +256,16 @@ fun SightsImageSlider(sight: Sight) {
         ) {
             //val natural = sight[page]
             val displaySight = getSights()*/
+
         Box(
             modifier = Modifier
-                .fillMaxSize()
-                .background(LogoPink)
+                .fillMaxHeight()
+                .fillMaxHeight()
                 .align(Alignment.CenterHorizontally)
+                .padding(0.dp)
         ) {
 
-/*
+                /*
                     Image(
                         painter = painterResource(
                             id = when (page) {
@@ -290,14 +289,12 @@ fun SightsImageSlider(sight: Sight) {
                             .padding(6.dp)
                             .fillMaxSize()
                             .padding(15.dp, 0.dp, 15.dp, 0.dp),
-
-
                         shape = RoundedCornerShape(corner = CornerSize(16.dp)),
                         elevation = 6.dp
                     ) {
 
                         Box(modifier = Modifier
-                            .height(450.dp)
+                            .height(600.dp)
                             .width(350.dp)) {
                             AsyncImage(
                                 model = ImageRequest.Builder(LocalContext.current)
@@ -307,8 +304,6 @@ fun SightsImageSlider(sight: Sight) {
                                 contentDescription = "City famous sight image",
                                 contentScale = ContentScale.Crop,
                                 modifier = Modifier.fillMaxSize()
-
-
                             )
                         }
                         //content()
@@ -375,17 +370,15 @@ fun SightsRow(
         elevation = 6.dp
     ) {
 
-        Box(modifier = Modifier.fillMaxSize()) {
+        Box(modifier = Modifier.height(200.dp)) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(sight.sight_bg)
+                    .data(R.drawable.darkgoogle)
                     .crossfade(true)
                     .build(),
                 contentDescription = "Sight image",
-                contentScale = ContentScale.Crop,
+                contentScale = ContentScale.FillBounds,
                 modifier = Modifier.clip(RectangleShape)
-
-
             )
             Box(
                 modifier = Modifier
@@ -394,12 +387,12 @@ fun SightsRow(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "Top Sightseeing places",
+                    text = "Sights",
                     style = TextStyle(
-                        fontSize = 25.sp,
-                        color = Color.White,
+                        fontSize = 55.sp,
+                        color = androidx.compose.ui.graphics.Color.White,
                         shadow = Shadow(
-                            color = Color.Black,
+                            color = androidx.compose.ui.graphics.Color.Black,
                             offset = Offset(0f, 0f),
                             blurRadius = 20f
                         )
