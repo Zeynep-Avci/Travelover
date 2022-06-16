@@ -123,6 +123,10 @@ fun MainContent(navController: NavController, city: City, favouriteViewModel: Fa
             Ticket(
                 city = city
             )
+
+            Hotel(
+                city = city
+            )
         }
 
     }

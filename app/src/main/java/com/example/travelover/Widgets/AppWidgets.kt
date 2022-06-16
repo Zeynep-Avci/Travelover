@@ -395,7 +395,62 @@ fun Ticket(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "Ticket",
+                    text = "Tickets",
+                    style = TextStyle(
+                        fontSize = 55.sp,
+                        color = Color.White,
+                        shadow = Shadow(
+                            color = Color.Black,
+                            offset = Offset(0f, 0f),
+                            blurRadius = 20f
+                        )
+                    )
+                )
+            }
+
+
+        }
+
+    }
+}
+
+@Composable
+fun Hotel(
+    city: City = getCities()[0],
+    onItemClick: (Unit) -> Unit = {}
+) {
+    val uriHandler = LocalUriHandler.current
+    Card(
+        //border = BorderStroke(1.dp, androidx.compose.ui.graphics.Color.Black) ,
+        modifier = Modifier
+            .padding(4.dp)
+            .fillMaxWidth()
+            .clickable
+            {
+                onItemClick(uriHandler.openUri(city.hotelLink))
+            },
+        shape = RoundedCornerShape(corner = CornerSize(16.dp)),
+        elevation = 6.dp
+    ) {
+
+        Box(modifier = Modifier.height(150.dp)) {
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(R.drawable.hotelkey)
+                    .crossfade(true)
+                    .build(),
+                contentDescription = "Ticket",
+                contentScale = ContentScale.FillWidth,
+                modifier = Modifier.clip(RectangleShape)
+            )
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(3.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "Hotels",
                     style = TextStyle(
                         fontSize = 55.sp,
                         color = Color.White,
