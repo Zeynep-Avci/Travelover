@@ -114,7 +114,8 @@ fun MainContent(navController: NavController, city: City, favouriteViewModel: Fa
             }
 */
             SightsRow(
-                onItemClick = { cityId -> navController.navigate(AppScreens.SightsScreen.name+"/$cityId")}
+                city = city,
+                onItemClick = { sightId -> navController.navigate(AppScreens.SightsScreen.name+"/$sightId")}
             )
         }
 

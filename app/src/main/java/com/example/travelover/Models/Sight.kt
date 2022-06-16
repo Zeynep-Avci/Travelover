@@ -3,18 +3,20 @@ package com.example.travelover.Models
 import com.example.travelover.R
 
 data class Sight(
+    val sight_bg: Int,
     val id: String,
     val city_name: String,
     val sight_name: String,
     val sight_images: List<String>,
     val rating: Float,
     val desc: String, //description
-    val sight_bg: Int
+
 )
 
 fun getSights(): List<Sight> {
     return listOf(
         Sight(
+            R.drawable.cairo_sight,
             "1",
             "Cairo",
             "",
@@ -26,9 +28,10 @@ fun getSights(): List<Sight> {
             ),
             4.0f,
             "Make it Easy Decription Sample 2",
-            R.drawable.cairo_sight
+
         ),
         Sight(
+            R.drawable.london_sight,
             "2",
             "London",
             "",
@@ -40,9 +43,10 @@ fun getSights(): List<Sight> {
             ),
             4.0f,
             "Make it Easy Decription Sample 2",
-            R.drawable.london_sight
+
         ),
         Sight(
+            R.drawable.vienna_sight,
             "3",
             "Vienna",
             "",
@@ -54,9 +58,10 @@ fun getSights(): List<Sight> {
             ),
             4.0f,
             "Make it Easy Decription Sample 2",
-            R.drawable.vienna_sight
+
         ),
         Sight(
+            R.drawable.istanbul_sight,
             "4",
             "Istanbul",
             "",
@@ -68,9 +73,10 @@ fun getSights(): List<Sight> {
             ),
             4.0f,
             "Make it Easy Decription Sample 2",
-            R.drawable.istanbul_sight
+
         ),
         Sight(
+            R.drawable.venice_sight,
             "5",
             "Venice",
             "",
@@ -82,9 +88,10 @@ fun getSights(): List<Sight> {
             ),
             4.0f,
             "Make it Easy Decription Sample 2",
-            R.drawable.venice_sight
+
         ),
         Sight(
+            R.drawable.kyoto_sight,
             "6",
             "Kyoto",
             "",
@@ -96,7 +103,7 @@ fun getSights(): List<Sight> {
             ),
             4.0f,
             "Make it Easy Decription Sample 2",
-            R.drawable.kyoto_sight
+
         )
     )
 }

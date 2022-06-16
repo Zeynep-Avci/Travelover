@@ -147,9 +147,9 @@ fun CityRow(
                     text = city.name,
                     style = TextStyle(
                         fontSize = 55.sp,
-                        color = androidx.compose.ui.graphics.Color.White,
+                        color = Color.White,
                         shadow = Shadow(
-                            color = androidx.compose.ui.graphics.Color.Black,
+                            color = Color.Black,
                             offset = Offset(0f, 0f),
                             blurRadius = 20f
                         )
@@ -319,7 +319,7 @@ fun SightsImageSlider(sight: Sight) {
                     text = sight.sight_name,
                     style = MaterialTheme.typography.h5,
                     color = Color.White,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = Bold
                 )
 /*
                     val ratingBar = RatingBar(
@@ -353,6 +353,7 @@ fun SightsImageSlider(sight: Sight) {
 @Preview
 @Composable
 fun SightsRow(
+    city: City = getCities()[0],
     sight: Sight = getSights()[0],
     onItemClick: (String) -> Unit = {},
     content: @Composable () -> Unit = {}
@@ -364,7 +365,7 @@ fun SightsRow(
             .fillMaxWidth()
             .clickable
             {
-                onItemClick(sight.id)
+                onItemClick(city.id)
             },
         shape = RoundedCornerShape(corner = CornerSize(16.dp)),
         elevation = 6.dp
@@ -377,7 +378,7 @@ fun SightsRow(
                     .crossfade(true)
                     .build(),
                 contentDescription = "Sight image",
-                contentScale = ContentScale.FillBounds,
+                contentScale = ContentScale.FillWidth,
                 modifier = Modifier.clip(RectangleShape)
             )
             Box(
@@ -390,9 +391,9 @@ fun SightsRow(
                     text = "Sights",
                     style = TextStyle(
                         fontSize = 55.sp,
-                        color = androidx.compose.ui.graphics.Color.White,
+                        color = Color.White,
                         shadow = Shadow(
-                            color = androidx.compose.ui.graphics.Color.Black,
+                            color = Color.Black,
                             offset = Offset(0f, 0f),
                             blurRadius = 20f
                         )
