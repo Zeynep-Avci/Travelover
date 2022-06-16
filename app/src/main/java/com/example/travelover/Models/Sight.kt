@@ -4,12 +4,12 @@ import com.example.travelover.R
 
 data class Sight(
     val sight_bg: Int,
-    val id: String,
+    var id: String,
     val city_name: String,
     val sight_name: String,
     val sight_images: List<String>,
     val rating: Float,
-    val desc: String, //description
+    val desc: List<String>, //description
 
 )
 
@@ -27,7 +27,11 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/wpimages/2021/04/egypt-cairo-top-attractions-shop-amid-maze-khan-el-khalili.jpg"
             ),
             4.0f,
-            "Make it Easy Decription Sample 2",
+            desc = listOf("Luxor Temple",
+                "Cairo Tower",
+            "Al-Azhar Mosque",
+                "Khan el-Khalili"
+            )
 
         ),
         Sight(
@@ -42,7 +46,11 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/wpimages/2021/08/england-london-top-attractions-tower-london-tower-bridge.jpg"
             ),
             4.0f,
-            "Make it Easy Decription Sample 2",
+            desc = listOf("Hyde Park",
+                "London Eye",
+                "Tower of London",
+                "London Tower Bridge",
+            )
 
         ),
         Sight(
@@ -57,7 +65,10 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/wpimages/2021/07/austria-vienna-top-attractions-climb-towers-st-stephens-cathedral.jpg"
             ),
             4.0f,
-            "Make it Easy Decription Sample 2",
+            desc = listOf("Schonbrunn Palace Gardens",
+            "Hofburg",
+            "Vienna Opera House",
+            "St. Stephens Cathedral")
 
         ),
         Sight(
@@ -72,8 +83,10 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/photos-large/TR/turkey-istanbul-interior-topkapi-palace.jpg"
             ),
             4.0f,
-            "Make it Easy Decription Sample 2",
-
+            desc = listOf("Aya Sofya",
+            "Blue Mosque",
+            "Grand Bazaar",
+            "Topkapi Palace")
         ),
         Sight(
             R.drawable.venice_sight,
@@ -87,7 +100,10 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/photos-large/I/italy-venice-bridge-of-sighs.jpg"
             ),
             4.0f,
-            "Make it Easy Decription Sample 2",
+            desc = listOf("Venice Canale Grande",
+            "Santa Maria Della Salute",
+            "St. Marks Square",
+            "Bridge of Sighs")
 
         ),
         Sight(
@@ -102,7 +118,10 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/photos-large/JPN/japan-kyoto-byodo-in-temple.jpg"
             ),
             4.0f,
-            "Make it Easy Decription Sample 2",
+            desc = listOf("Nijo Castle",
+            "Kiyomizo Dera Temple",
+            "Kinkaku Ji Golden Pavilion",
+            "Byodoin Temple")
 
         )
     )

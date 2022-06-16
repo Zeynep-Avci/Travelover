@@ -10,6 +10,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CornerSize
@@ -37,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.lerp
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
+import androidx.compose.ui.text.font.FontWeight.Companion.Normal
 import androidx.compose.ui.viewinterop.AndroidView
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
@@ -89,7 +91,7 @@ fun FavoriteIcon(
 }
 
 
-//@OptIn(ExperimentalAnimationApi::class)
+
 @Preview
 @Composable
 fun CityRow(
@@ -193,28 +195,14 @@ fun HorizontalScrollableImageView(city: City) {
 }
 
 
-//@ExperimentalPagerApi
 @Composable
 fun SightsImageSlider(sight: Sight) {
 
-    /* val pagerState = rememberPagerState(
-         pageCount = natural.size,
-         initialPage = 2
-     )
-
-     LaunchedEffect(Unit) {
-         while (true) {
-             yield()
-             delay(2000)
-             pagerState.animateScrollToPage(
-                 page = (pagerState.currentPage + 1) % (pagerState.pageCount),
-                 animationSpec = tween(600)
-             )
-         }
-     }*/
 
     Column(
-        modifier = Modifier.fillMaxWidth().fillMaxHeight()
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
     ) {
         //column for title Box at the top
         Column(
@@ -233,32 +221,6 @@ fun SightsImageSlider(sight: Sight) {
         }
 
 
-        /*HorizontalPager(
-            state = pagerState,
-            modifier = Modifier
-                .weight(1f)
-                .padding(0.dp, 40.dp, 0.dp, 40.dp)
-        ) { //page ->
-        Card(
-            modifier = Modifier
-                /*.graphicsLayer {
-                    val pageOffset = calculateCurrentOffsetForPage(page).absoluteValue
-                    lerp(
-                        start = 0.85f,
-                        stop = 1f,
-                        fraction = 1f - pageOffset.coerceIn(0f, 1f)
-                    ).also { scale ->
-                        scaleX = scale
-                        scaleY = scale
-                    }
-
-                }*/
-                .fillMaxWidth()
-                .padding(15.dp, 0.dp, 15.dp, 0.dp),
-            shape = RoundedCornerShape(20.dp)
-        ) {
-            //val natural = sight[page]
-            val displaySight = getSights()*/
 
         Box(
             modifier = Modifier
@@ -268,22 +230,7 @@ fun SightsImageSlider(sight: Sight) {
                 .padding(0.dp)
         ) {
 
-                /*
-                    Image(
-                        painter = painterResource(
-                            id = when (page) {
-                                1 -> R.drawable.image_1
-                                2 -> R.drawable.image_2
-                                3 -> R.drawable.image_3
-                                4 -> R.drawable.image_4
-                                5 -> R.drawable.image_5
-                                else -> R.drawable.image_1
-                            }
-                        ),
-                        contentDescription = "Image",
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier.fillMaxSize()
-                    )*/
+
             LazyRow {
                 items(sight.sight_images) { image ->
                     Card(
@@ -296,9 +243,11 @@ fun SightsImageSlider(sight: Sight) {
                         elevation = 6.dp
                     ) {
 
-                        Box(modifier = Modifier
-                            .height(600.dp)
-                            .width(350.dp)) {
+                        Box(
+                            modifier = Modifier
+                                .height(600.dp)
+                                .width(350.dp)
+                        ) {
                             AsyncImage(
                                 model = ImageRequest.Builder(LocalContext.current)
                                     .data(image)
@@ -308,6 +257,32 @@ fun SightsImageSlider(sight: Sight) {
                                 contentScale = ContentScale.Crop,
                                 modifier = Modifier.fillMaxSize()
                             )
+                            LazyRow(
+                                modifier = Modifier
+                                    .align(Alignment.BottomStart)
+                                    .padding(15.dp)
+                            ) {
+
+                                items(sight.desc) {
+
+                                    Text(
+                                        text = it,
+                                        color = Color.White,
+                                        fontWeight = Normal,
+                                        style = MaterialTheme.typography.h5
+                                    )
+
+                                }
+                                /*
+                                     text = sight.sight_name,
+                                     style = MaterialTheme.typography.h5,
+                                     color = Color.White,
+                                     fontWeight = Bold
+                                 )
+
+                                 */
+
+                            }
                         }
                         //content()
                     }
@@ -315,41 +290,11 @@ fun SightsImageSlider(sight: Sight) {
                 }
 
             }
-            Column(
-                modifier = Modifier
-                    .align(Alignment.BottomStart)
-                    .padding(15.dp)
-            ) {
-                Text(
-                    text = sight.sight_name,
-                    style = MaterialTheme.typography.h5,
-                    color = Color.White,
-                    fontWeight = Bold
-                )
-/*
-                    val ratingBar = RatingBar(
-                        LocalContext.current, null,// R.attr.ratingBarStyleSmall
-                    ).apply {
-                        rating = sight.rating
-                        progressDrawable.setColorFilter(
-                            android.graphics.Color.parseColor("#FF0000"),
-                            PorterDuff.Mode.SRC_ATOP
-                        )
-                    }
-                    AndroidView(
-                        factory = { ratingBar },
-                        modifier = Modifier.padding(0.dp, 8.dp, 0.dp, 0.dp)
-                    )*/
 
-                Text(
-                    text = sight.desc,
-                    style = MaterialTheme.typography.body1,
-                    color = Color.White,
-                    fontWeight = FontWeight.Normal,
-                    modifier = Modifier.padding(0.dp, 8.dp, 0.dp, 0.dp)
-                )
-            }
+
+
         }
+        //content()
     }
 }
 
