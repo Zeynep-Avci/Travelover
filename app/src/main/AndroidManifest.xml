@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.travelover">
 
+    <meta-data android:name="com.google.android.geo.API_KEY"
+        android:value="Put Your MAPS_KEY"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
