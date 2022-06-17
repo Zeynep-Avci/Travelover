@@ -245,7 +245,7 @@ fun SightsImageSlider(sight: Sight) {
 
                         Box(
                             modifier = Modifier
-                                .height(600.dp)
+                                .height(550.dp)
                                 .width(350.dp)
                         ) {
                             AsyncImage(
@@ -254,7 +254,7 @@ fun SightsImageSlider(sight: Sight) {
                                     .crossfade(true)
                                     .build(),
                                 contentDescription = "City famous sight image",
-                                contentScale = ContentScale.Crop,
+                                contentScale = ContentScale.FillBounds,
                                 modifier = Modifier.fillMaxSize()
                             )
                             LazyRow(

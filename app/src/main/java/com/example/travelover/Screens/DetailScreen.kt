@@ -11,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -39,7 +40,7 @@ fun DetailScreen(
     Scaffold(
         topBar = {
             SimpleTopAppBar(arrowBackClicked = { navController.popBackStack() }) {
-                Text(text = city.name)
+                Text(text = city.name, style = TextStyle(color = Color.White, fontFamily = FontFamily.Default, fontSize = 20.sp ))
             }
         }
     ) {
