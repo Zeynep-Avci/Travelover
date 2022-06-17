@@ -128,6 +128,10 @@ fun MainContent(navController: NavController, city: City, favouriteViewModel: Fa
             Hotel(
                 city = city
             )
+
+            Restaurants(
+                city = city
+            )
         }
 
     }

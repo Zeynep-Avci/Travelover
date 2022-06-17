@@ -13,6 +13,7 @@ data class City(
     val images: List<String>,
     val cityInfo: String,
     val sights: List<String>,
+    val restaurants: String
 
 )
 
@@ -43,6 +44,7 @@ fun getCities(): List<City> {
                 "sight2",
                 "sight3"
             ),
+            restaurants = "https://www.fodors.com/world/africa-and-middle-east/egypt/cairo/restaurants",
 
             ),
 
@@ -72,6 +74,7 @@ fun getCities(): List<City> {
                 "sight2",
                 "sight3"
             ),
+            restaurants = "https://www.timeout.com/london/restaurants/best-restaurants-in-london",
         ),
 
 
@@ -102,7 +105,7 @@ fun getCities(): List<City> {
                 "sight2",
                 "sight3"
             ),
-
+            restaurants = "https://www.timeout.com/vienna/restaurants/best-restaurants-in-vienna",
             ),
 
 
@@ -130,6 +133,7 @@ fun getCities(): List<City> {
                 "sight2",
                 "sight3"
             ),
+            restaurants = "https://yummyistanbul.com/best-restaurants-in-istanbul/",
         ),
 
         City(
@@ -152,6 +156,7 @@ fun getCities(): List<City> {
                 "sight2",
                 "sight3"
             ),
+            restaurants = "https://www.timeout.com/venice/restaurants/best-restaurants-in-venice"
         ),
 
         City(
@@ -174,6 +179,7 @@ fun getCities(): List<City> {
                 "sight2",
                 "sight3"
             ),
+            restaurants = "https://theculturetrip.com/asia/japan/articles/kyoto-s-10-best-cultural-restaurants-top-must-try-local-eats/"
         ),
 
         )
