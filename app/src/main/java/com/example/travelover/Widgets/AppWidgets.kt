@@ -15,6 +15,8 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
@@ -23,6 +25,7 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.*
@@ -39,12 +42,14 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.lerp
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.font.FontWeight.Companion.Normal
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.viewinterop.AndroidView
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.travelover.Models.*
 import com.example.travelover.R
 import com.example.travelover.ui.theme.LogoPink
+import com.example.travelover.ui.theme.NavColor
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.yield
 import kotlin.math.absoluteValue
@@ -89,7 +94,6 @@ fun FavoriteIcon(
             )
     }
 }
-
 
 
 @Preview
@@ -290,7 +294,6 @@ fun SightsImageSlider(sight: Sight) {
                 }
 
             }
-
 
 
         }
@@ -496,7 +499,7 @@ fun Restaurants(
                     .crossfade(true)
                     .build(),
                 contentDescription = "Best Restaurants",
-                contentScale = ContentScale.FillHeight,
+                contentScale = ContentScale.FillWidth,
                 modifier = Modifier.clip(RectangleShape)
             )
             Box(
@@ -525,5 +528,81 @@ fun Restaurants(
     }
 }
 
+@Composable
+fun SearchAppBar(
+    text: String,
+    onTextChange: (String) -> Unit,
+    onCloseClicked: () -> Unit,
+    onSearchClicked: (String) -> Unit,
+) {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(56.dp),
+        elevation = AppBarDefaults.TopAppBarElevation,
+        color = MaterialTheme.colors.primary
+    ) {
+        TextField(modifier = Modifier
+            .fillMaxWidth(),
+            value = text,
+            onValueChange = {
+                onTextChange(it)
+            },
+            placeholder = {
+                Text(
+                    modifier = Modifier
+                        .alpha(ContentAlpha.medium),
+                    text = "Search here...",
+                    color = Color.White
+                )
+            },
+            textStyle = TextStyle(
+                fontSize = MaterialTheme.typography.subtitle1.fontSize
+            ),
+            singleLine = true,
+            leadingIcon = {
+                IconButton(
+                    modifier = Modifier
+                        .alpha(ContentAlpha.medium),
+                    onClick = {}
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = "Search Icon",
+                        tint = Color.White
+                    )
+                }
+            },
+            trailingIcon = {
+                IconButton(
+                    onClick = {
+                        if (text.isNotEmpty()) {
+                            onTextChange("")
+                        } else {
+                            onCloseClicked()
+                        }
+                    }
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Close,
+                        contentDescription = "Close Icon",
+                        tint = Color.White
+                    )
+                }
+            },
+            keyboardOptions = KeyboardOptions(
+                imeAction = ImeAction.Search
+            ),
+            keyboardActions = KeyboardActions(
+                onSearch = {
+                    onSearchClicked(text)
+                }
+            ),
+            colors = TextFieldDefaults.textFieldColors(
+                backgroundColor = Color.Transparent,
+                cursorColor = Color.White.copy(alpha = ContentAlpha.medium)
+            ))
+    }
+}
 
 

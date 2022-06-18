@@ -11,6 +11,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -32,7 +33,13 @@ fun HomeScreen(navController: NavController, viewModel: FavouriteViewModel){
     Scaffold(topBar = {
         TopAppBar(
             title = { Text("Cities") },
+            //Search Bar
+            //onSearchClicked = {},
             actions = {
+                //IconButton(onClick = {onSearchClicked()}
+                //){
+                  //  Icon(imageVector = Icons.Filled.Search, contentDescription = "Search Icon", tint = Color.White)
+              //  }
                 IconButton(onClick = { showMenu = !showMenu }) {
                     Icon(imageVector = Icons.Default.MoreVert, contentDescription = "More")
                 }
@@ -49,6 +56,7 @@ fun HomeScreen(navController: NavController, viewModel: FavouriteViewModel){
                         }
                     }
                 }
+
             }
         )
     }) {
