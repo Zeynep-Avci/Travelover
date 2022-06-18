@@ -1,3 +1,4 @@
+/*
 package com.example.travelover.Screens
 
 import android.graphics.fonts.FontFamily
@@ -212,3 +213,4 @@ fun rememberMapLifecycleObserver(mapView: MapView): LifecycleEventObserver =
 
 
 
+*/
