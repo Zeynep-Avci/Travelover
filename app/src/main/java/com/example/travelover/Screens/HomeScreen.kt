@@ -24,12 +24,10 @@ import com.example.travelover.Models.City
 import com.example.travelover.Models.getCities
 import com.example.travelover.Navigation.AppScreens
 import com.example.travelover.ViewModels.FavouriteViewModel
-import com.example.travelover.ViewModels.SearchViewModel
 import com.example.travelover.Widgets.CityRow
 import com.example.travelover.Widgets.FavoriteIcon
-import com.example.travelover.Widgets.SearchAppBar
 import com.example.travelover.ui.theme.LogoPink
-import com.example.travelover.ui.theme.SearchWidgetState
+
 
 @Composable
 fun HomeScreen(navController: NavController, viewModel: FavouriteViewModel){

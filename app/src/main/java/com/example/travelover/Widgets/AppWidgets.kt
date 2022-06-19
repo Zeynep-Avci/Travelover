@@ -223,11 +223,8 @@ fun SightsImageSlider(sight: Sight = getSights()[0]) {
         }
 
 
-
         Box(
             modifier = Modifier
-                .horizontalScroll(rememberScrollState())
-                .weight(weight =1f, fill = false)
                 .fillMaxHeight()
                 .fillMaxHeight()
                 .align(Alignment.CenterHorizontally)
