@@ -8,20 +8,19 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.travelover.Models.Sight
 import com.example.travelover.Models.getSights
 import com.example.travelover.ViewModels.FavouriteViewModel
 import com.example.travelover.Widgets.*
-import com.example.travelover.ui.theme.TraveloverTheme
+
 
 
 fun filterSights(sightId: String?): Sight {
     return getSights().filter { it.id == sightId }[0]
 }
 
-//@OptIn(ExperimentalPagerApi::class)
+
 @Composable
 fun SightsScreen(
     navController: NavController,
@@ -37,13 +36,13 @@ fun SightsScreen(
             }
         }
     ) {
-        MainContent(navController, sight = sight, favouriteViewModel)
+        MainContent( sight = sight)
     }
 }
 
 
 @Composable
-fun MainContent(navController: NavController, sight: Sight,favouriteViewModel: FavouriteViewModel) {
+fun MainContent(sight: Sight) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()

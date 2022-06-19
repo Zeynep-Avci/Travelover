@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.travelover.Models.City
 import com.example.travelover.Models.getCities
@@ -31,62 +32,35 @@ import com.example.travelover.ui.theme.LogoPink
 import com.example.travelover.ui.theme.SearchWidgetState
 
 @Composable
-fun HomeScreen(navController: NavController, searchViewModel: SearchViewModel){
-    val searchWidgetState by searchViewModel.searchWidgetState
-    val searchTextState by searchViewModel.searchTextState
+fun HomeScreen(navController: NavController, viewModel: FavouriteViewModel){
+    var showMenu by remember { mutableStateOf(false) }
 
-    Scaffold(
-        topBar = {
-            mainHomeBar(
-                navController = navController,
-                searchWidgetState = searchWidgetState,
-                searchTextState = searchTextState,
-                onTextChange = {
-                    searchViewModel.updateSearchTextState(newValue = it)
-                },
-                onCloseClicked = {
-                    searchViewModel.updateSearchWidgetState(newValue = SearchWidgetState.CLOSED)
-                },
-                onSearchClicked = {
-                    Log.d("Searched Text", it)
-                },
-                onSearchTriggered = {
-                    searchViewModel.updateSearchWidgetState(newValue = SearchWidgetState.OPENED)
+    Scaffold(topBar = {
+        TopAppBar(
+            title = { Text("Cities") },
+            actions = {
+                IconButton(onClick = { showMenu = !showMenu }) {
+                    Icon(imageVector = Icons.Default.MoreVert, contentDescription = "More")
                 }
-            )
-        }
-    ) {}
-}
-
-@Composable
-fun mainHomeBar(
-    searchWidgetState: SearchWidgetState,
-    searchTextState: String,
-    onTextChange: (String) -> Unit,
-    onCloseClicked: () -> Unit,
-    onSearchClicked: (String) -> Unit,
-    onSearchTriggered: () -> Unit,
-    navController: NavController
-) {
-    when (searchWidgetState) {
-        SearchWidgetState.CLOSED -> {
-            DefaultHomeBar(
-                navController = navController,
-                onSearchClicked = onSearchTriggered,
-                viewModel = FavouriteViewModel()
-            )
-        }
-        SearchWidgetState.OPENED -> {
-            SearchAppBar(
-                text = searchTextState,
-                onTextChange = onTextChange,
-                onCloseClicked = onCloseClicked,
-                onSearchClicked = onSearchClicked
-            )
-        }
+                DropdownMenu(
+                    expanded = showMenu,
+                    onDismissRequest = { showMenu = false }
+                ) {
+                    DropdownMenuItem(onClick = { navController.navigate(route = AppScreens.FavouriteScreen.name) }) {
+                        Row(modifier = Modifier.clickable { navController.navigate(AppScreens.FavouriteScreen.name) }) {
+                            Icon(imageVector = Icons.Default.Favorite, contentDescription = "Favorites", modifier = Modifier.padding(4.dp), tint = LogoPink)
+                            Text(text = "Favorites", modifier = Modifier
+                                .width(100.dp)
+                                .padding(4.dp))
+                        }
+                    }
+                }
+            }
+        )
+    }) {
+        MainContent(navController = navController, favoritesViewModel = viewModel)
     }
 }
-
 
 @Composable
 fun MainContent(navController: NavController, favoritesViewModel: FavouriteViewModel, cities: List<City> = getCities()){
@@ -110,46 +84,3 @@ fun MainContent(navController: NavController, favoritesViewModel: FavouriteViewM
         }
     }
 }
-@Composable
-fun DefaultHomeBar(navController: NavController, viewModel: FavouriteViewModel, onSearchClicked: () -> Unit){
-    var showMenu by remember { mutableStateOf(false) }
-
-
-    Scaffold(topBar = {
-        TopAppBar(
-            title = { Text("Cities") },
-
-            actions = {
-                IconButton(
-                    onClick = { onSearchClicked() }
-                ) {
-                    Icon(
-                        imageVector = Icons.Filled.Search,
-                        contentDescription = "Search Icon",
-                        tint = Color.White
-                    )}
-                IconButton(onClick = { showMenu = !showMenu }) {
-                    Icon(imageVector = Icons.Default.MoreVert, contentDescription = "More")
-                }
-                DropdownMenu(
-                    expanded = showMenu,
-                    onDismissRequest = { showMenu = false }
-                ) {
-                    DropdownMenuItem(onClick = { navController.navigate(route = AppScreens.FavouriteScreen.name) }) {
-                        Row(modifier = Modifier.clickable { navController.navigate(AppScreens.FavouriteScreen.name) }) {
-                            Icon(imageVector = Icons.Default.Favorite, contentDescription = "Favorites", modifier = Modifier.padding(4.dp), tint = LogoPink)
-                            Text(text = "Favorites", modifier = Modifier
-                                .width(100.dp)
-                                .padding(4.dp))
-                        }
-                    }
-                }
-
-            }
-        )
-    }) {
-        MainContent(navController = navController, favoritesViewModel = viewModel)
-    }
-}
-
-

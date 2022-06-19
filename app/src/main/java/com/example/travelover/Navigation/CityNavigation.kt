@@ -23,7 +23,7 @@ fun CityNavigation(){
 
     NavHost(navController = navController, startDestination = AppScreens.HomeScreen.name){
         composable(route = AppScreens.HomeScreen.name) {
-            HomeScreen(navController = navController, searchViewModel = SearchViewModel())
+            HomeScreen(navController = navController, viewModel = favouriteViewModel)
         }
 
         composable(route = AppScreens.FavouriteScreen.name) {

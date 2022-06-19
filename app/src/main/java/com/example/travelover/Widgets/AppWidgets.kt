@@ -6,9 +6,7 @@ import android.graphics.PorterDuff
 import android.widget.RatingBar
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -48,6 +46,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.travelover.Models.*
 import com.example.travelover.R
+import com.example.travelover.Screens.filterCity
 import com.example.travelover.ui.theme.LogoPink
 import com.example.travelover.ui.theme.NavColor
 import kotlinx.coroutines.delay
@@ -198,9 +197,8 @@ fun HorizontalScrollableImageView(city: City) {
     }
 }
 
-
 @Composable
-fun SightsImageSlider(sight: Sight) {
+fun SightsImageSlider(sight: Sight = getSights()[0]) {
 
 
     Column(
@@ -228,6 +226,8 @@ fun SightsImageSlider(sight: Sight) {
 
         Box(
             modifier = Modifier
+                .horizontalScroll(rememberScrollState())
+                .weight(weight =1f, fill = false)
                 .fillMaxHeight()
                 .fillMaxHeight()
                 .align(Alignment.CenterHorizontally)
@@ -261,37 +261,37 @@ fun SightsImageSlider(sight: Sight) {
                                 contentScale = ContentScale.FillBounds,
                                 modifier = Modifier.fillMaxSize()
                             )
-                            LazyRow(
-                                modifier = Modifier
-                                    .align(Alignment.BottomStart)
-                                    .padding(15.dp)
-                            ) {
 
-                                items(sight.desc) {
 
-                                    Text(
-                                        text = it,
-                                        color = Color.White,
-                                        fontWeight = Normal,
-                                        style = MaterialTheme.typography.h5
-                                    )
 
-                                }
-                                /*
-                                     text = sight.sight_name,
-                                     style = MaterialTheme.typography.h5,
-                                     color = Color.White,
-                                     fontWeight = Bold
-                                 )
-
-                                 */
-
-                            }
                         }
                         //content()
                     }
 
                 }
+
+            }
+            LazyRow(
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(15.dp, 0.dp, 15.dp, 0.dp)
+            ) { items(sight.desc) { desc ->
+
+                Box(modifier = Modifier
+                    .width(350.dp)
+                    .align(Alignment.BottomEnd)
+                )
+                {
+                    Text(
+                        text = desc,
+                        color = Color.White,
+                        fontWeight = Normal,
+                        style = MaterialTheme.typography.h5
+                    )
+                }
+
+
+            }
 
             }
 
@@ -300,7 +300,6 @@ fun SightsImageSlider(sight: Sight) {
         //content()
     }
 }
-
 
 //Function for famous sights of the shown city -> takes to SightsScreen
 @Preview
@@ -527,9 +526,11 @@ fun Restaurants(
 
     }
 }
+/*
 
 @Composable
 fun SearchAppBar(
+    city: City,
     text: String,
     onTextChange: (String) -> Unit,
     onCloseClicked: () -> Unit,
@@ -602,7 +603,17 @@ fun SearchAppBar(
                 backgroundColor = Color.Transparent,
                 cursorColor = Color.White.copy(alpha = ContentAlpha.medium)
             ))
+
+        if (text == city.name){
+            filterCity(cityId = city.name)
+        }else{
+            Text(
+                text = "City not ...",
+                color = Color.White
+            )
+        }
     }
 }
 
 
+*/
