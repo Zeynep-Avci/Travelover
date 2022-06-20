@@ -1,6 +1,5 @@
 package com.example.travelover.Models
 
-
 import com.example.travelover.R
 
 data class City(
@@ -106,7 +105,7 @@ fun getCities(): List<City> {
                 "sight3"
             ),
             restaurants = "https://www.timeout.com/vienna/restaurants/best-restaurants-in-vienna",
-            ),
+        ),
 
 
         City(

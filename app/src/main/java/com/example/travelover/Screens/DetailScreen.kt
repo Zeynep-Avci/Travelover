@@ -1,7 +1,4 @@
 package com.example.travelover.Screens
-
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -20,8 +17,6 @@ import com.example.travelover.Models.getCities
 import com.example.travelover.Navigation.AppScreens
 import com.example.travelover.ViewModels.FavouriteViewModel
 import com.example.travelover.Widgets.*
-import com.example.travelover.ui.theme.Heart
-import com.example.travelover.ui.theme.NormalBlue
 import com.example.travelover.ui.theme.GreyFont
 
 
@@ -102,19 +97,7 @@ fun MainContent(navController: NavController, city: City, favouriteViewModel: Fa
             Spacer(modifier = Modifier.height(6.dp))
 
             Divider()
-/*
-            Column(
-                modifier = Modifier.height(100.dp).width(400.dp)
-                    .background(NormalBlue)
-                    .clickable
-                    {
-                        onItemClick(city.name)
-                    },
-                     ) {
-                Text(text = "Famous Sights in " + city.name, style = MaterialTheme.typography.h4)
-                Text(text = "Famous Sights in " + city.name, style = MaterialTheme.typography.h4)
-            }
-*/
+
             SightsRow(
                 city = city,
                 onItemClick = { sightId -> navController.navigate(AppScreens.SightsScreen.name+"/$sightId")}
