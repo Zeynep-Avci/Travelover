@@ -247,7 +247,7 @@ fun SightsImageSlider(sight: Sight = getSights()[0]) {
 
                         Box(
                             modifier = Modifier
-                                .height(450.dp)
+                                .height(550.dp)
                                 .width(350.dp)
                         ) {
                             AsyncImage(
@@ -273,45 +273,42 @@ fun SightsImageSlider(sight: Sight = getSights()[0]) {
         }
         Column(
             modifier = Modifier
-            //.align(Alignment.BottomStart)
-            //.padding(15.dp, 0.dp, 15.dp, 0.dp)
-        ) { //items(sight.desc) { desc ->
+        ) {
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(15.dp))
 
-            Divider()
+            Text(text = sight.desc[0], style = MaterialTheme.typography.h5, modifier = Modifier.padding(horizontal = 20.dp))
             Text(
-                text = sight.desc[0] + "\n" + "\n"+ sight.sight_info[0],
+                text = sight.sight_info[0],
                 fontSize = 18.sp,
                 color = GreyFont,
-                fontWeight = Normal,
                 modifier = Modifier.padding(horizontal = 20.dp),
             )
-            Divider()
-            Spacer(modifier = Modifier.height(8.dp))
+
+            Spacer(modifier = Modifier.height(15.dp))
+            Text(text = sight.desc[1], style = MaterialTheme.typography.h5, modifier = Modifier.padding(horizontal = 20.dp))
             Text(
-                text = sight.desc[1] + "\n" + "\n" + sight.sight_info[1],
+                text = sight.sight_info[1],
                 fontSize = 18.sp,
                 color = GreyFont,
-                fontWeight = Normal,
                 modifier = Modifier.padding(horizontal = 20.dp),
             )
-            Divider()
-            Spacer(modifier = Modifier.height(8.dp))
+
+            Spacer(modifier = Modifier.height(15.dp))
+            Text(text = sight.desc[2], style = MaterialTheme.typography.h5, modifier = Modifier.padding(horizontal = 20.dp))
             Text(
-                text = sight.desc[2] + "\n"+ "\n" + sight.sight_info[2],
+                text =sight.sight_info[2],
                 fontSize = 18.sp,
                 color = GreyFont,
-                fontWeight = Normal,
                 modifier = Modifier.padding(horizontal = 20.dp),
             )
-            Divider()
-            Spacer(modifier = Modifier.height(8.dp))
+
+            Spacer(modifier = Modifier.height(15.dp))
+            Text(text = sight.desc[3], style = MaterialTheme.typography.h5, modifier = Modifier.padding(horizontal = 20.dp))
             Text(
-                text = sight.desc[3] + "\n" + "\n"+ sight.sight_info[3],
+                text = sight.sight_info[3],
                 fontSize = 18.sp,
                 color = GreyFont,
-                fontWeight = Normal,
                 modifier = Modifier.padding(horizontal = 20.dp),
 
             )
