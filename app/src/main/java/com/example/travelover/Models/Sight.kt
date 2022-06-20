@@ -135,9 +135,18 @@ fun getSights(): List<Sight> {
                 "4. Topkapi Palace"
             ),
             sight_info = listOf(
-                "sight1",
-                "sight2",
-                "sight3"
+                "It's said that when the Byzantine Emperor Justinian entered his finished church for the first time in CE 536, he cried out \"Glory to God that I have been judged worthy of such a work. Oh Solomon, I have outdone you!\"\n" +
+                        "\n" +
+                        "The Hagia Sophia (Aya Sofya in Turkish) was the emperor's swaggering statement to the world of the wealth and technical ability of his empire.",
+                "Sultan Ahmet I's grand architectural gift to his capital was this beautiful mosque, commonly known as the Blue Mosque today.\n" +
+                        "\n" +
+                        "Built between 1609 and 1616, the mosque caused a furore throughout the Muslim world when it was finished, as it had six minarets (the same number as the Great Mosque of Mecca). A seventh minaret was eventually gifted to Mecca to stem the dissent.",
+                "For many visitors, sightseeing in Istanbul is as much about shopping as museums and monumental attractions, and the Grand Bazaar is where everyone comes.\n" +
+                        "\n" +
+                        "This massive covered market is basically the world's first shopping mall, taking up a whole city quarter, surrounded by thick walls, between the Nuruosmanıye Mosque and Beyazıt Mosque.",
+                "First built by Mehmet the Conqueror in the 15th century, this glorious palace beside the Bosphorus was where the sultans of the Ottoman Empire lived and ruled from.\n" +
+                        "\n" +
+                        "The vast complex is a dazzling display of Islamic art, with opulent courtyards lined with intricate hand-painted tilework, linking a warren of sumptuously decorated rooms, all bounded by battlemented walls and towers."
             ),
         ),
         Sight(
@@ -159,9 +168,16 @@ fun getSights(): List<Sight> {
                 "4. Bridge of Sighs"
             ),
             sight_info = listOf(
-                "sight1",
-                "sight2",
-                "sight3"
+                "Sweeping through the heart of Venice in a giant reverse S curve, the Grand Canal is the principal boulevard through the city, connecting Piazza San Marco, Rialto Bridge, and the arrival points of the rail station and bridge from the mainland.\n" +
+                        "\n" +
+                        "Only four bridges cross its 3.8-kilometer length, but stripped-down gondolas called traghetti shuttle back and forth at several points between bridges. The Grand Canal was the address of choice for anyone who claimed any influence in Venice. Palaces of all the leading families open onto the canal, their showy Venetian Gothic and Early Renaissance facades facing the water, by which visitors arrived.",
+                "One of the most photographed churches in Venice, Santa Maria della Salute has a postcard setting, rising at the tip of a peninsula across from the Doge's Palace.\n" +
+                        "\n" +
+                        "The monumental Baroque church was built as thanks for the end of the plague of 1630. But the fragile land wouldn't support its tremendous weight, so its architect, Baldassare Longhena, had more than a million timbers driven into the floor of the lagoon before he could erect the church.",
+                "The vast expanse of Venice's largest square is brought together and made to seem almost intimate by the elegant uniformity of its architecture on three sides. But more than its architectural grace, St. Mark's Square (Piazza San Marco) is loved as Venice's living room, the place everybody gathers, strolls, drinks coffee, stops to chat, meets friends and tour guides, or just passes through on the way to work or play.",
+                "Visitors arriving in Venice once stepped ashore under the façade of this extraordinary palace. They couldn't have failed to be impressed, both by its size and the finesse of its architecture.\n" +
+                        "\n" +
+                        "If they were received inside by the Doges, the impression would only strengthen as they entered through the Porta della Carta, a perfect example of Venetian Gothic at its height, and ascended the monumental Scala dei Giganti and the gold-vaulted Scala d'Oro to be received in what many consider to be the palace's most beautiful chamber, Sala del Collegio."
             ),
 
         ),
@@ -184,9 +200,14 @@ fun getSights(): List<Sight> {
                 "4. Byodoin Temple"
             ),
             sight_info = listOf(
-                "sight1",
-                "sight2",
-                "sight3"
+                "Nijo Castle (Nijō-jō), complete with well-preserved walls, towers, and a moat, was built in 1603 and later served as the seat of government. The complex has several buildings containing many significant works of art, and is famous as the location chosen by the emperor to issue the rescript abolishing the country's once powerful Shogunate.",
+                "In the east part of Kyoto, the Kiyomizu-dera Temple, an important UNESCO World Heritage Site, lies in a picturesque location on Otowa Mountain overlooking the city. Visitors can enjoy a delightful stroll to the temple along quaint Tea-pot Lane with its small shops and craft stores.\n" +
+                        "\n" +
+                        "This beautiful temple was founded in AD 790 and dedicated to the 11-headed Kannon, the Buddhist Goddess of Mercy whose statue can be seen here. The existing buildings were erected after 1633 in the period of the third Tokugawa Shogun, Iemitsu, and stand mainly on a rocky outcrop high above the Otowa Waterfall.",
+                "Originally built in the 14th century as a retirement villa for Shogun Ashikaga Yoshimitsu and now a Zen Buddhist temple, the magnificent Golden Pavilion (Kinkaku-ji) is one of Kyoto's most picturesque attractions.\n" +
+                        "\n" +
+                        "Taking its name from the gold leaf adorning the top two of its three floors – a design element believed to alleviate any negativity associated with death – the structure has been rebuilt in its original form a number of times, this most recent incarnation dating from the late 1950s.",
+                "The Byōdō-in Temple, established in AD 988, boasts many unique buildings, shrines, and artworks and is worthy of a visit. Highlights include the Phoenix Hall (Hoo-do), with its bronze phoenixes on its two gables and rich interior décor. This attractive hall also features 11th-century paintings, including an imposing gilded figure of Amida, and an altar and ceiling inlaid with bronze and mother-of-pearl."
             ),
 
         )
