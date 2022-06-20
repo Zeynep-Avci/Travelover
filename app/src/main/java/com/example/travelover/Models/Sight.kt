@@ -9,7 +9,8 @@ data class Sight(
     val sight_name: String,
     val sight_images: List<String>,
     val rating: Float,
-    val desc: List<String>, //description
+    val desc: List<String>,
+    val sight_info: List<String>//description
 
 )
 
@@ -32,6 +33,32 @@ fun getSights(): List<Sight> {
                 "2. Cairo Tower",
                 "3. Al-Azhar Mosque",
                 "4. Khan el-Khalili"
+            ),
+            sight_info = listOf(
+                "The Pyramids of Giza are Cairo's number one half-day trip and a must-do attraction on everyone's itinerary.\n" +
+                        "\n" +
+                        "Right on the edge of the city, on the Giza Plateau, these fourth dynasty funerary temples have been wowing travelers for centuries and continue to be one of the country's major highlights.\n" +
+                        "\n" +
+                        "Despite the heat, the dust, and the tourist hustle, you can't miss a trip here.",
+                "The Cairo Tower is a free-standing concrete tower in Cairo, Egypt. At 187 m, it is " +
+                        "the tallest structure in Egypt and North Africa. It was the tallest structure" +
+                        " in Africa for ten years until 1971," +
+                        " when it was surpassed by Hillbrow Tower in South Africa.",
+                "Al-Azhar Mosque is the finest building of Cairo's Fatimid era and one of the city's earliest surviving mosques, completed in AD 972.\n" +
+                        "\n" +
+                        "It's also one of the world's oldest universities – Caliph El-Aziz bestowed it with" +
+                        " the status of university in AD 988 (the other university vying for \"oldest\" status is in Fes) and today, " +
+                        "Al-Azhar University is still the leading theological center of the Islamic world.",
+                "Khan el-Khalili is one of the world's great shopping experiences.\n" +
+                        "\n" +
+                        "This souq (bazaar) is a labyrinthine collection of skinny alleyways established as a shopping district in AD 1400, which still rings with the clang of metal workers and silversmiths.\n" +
+                        "\n" +
+                        "The main streets have long ago given themselves over completely to the tourist " +
+                        "trade (with plenty of cheap papyrus pictures and plastic pyramids on display), " +
+                        "but divert off the main drag into the surrounding alleyways, and the tiny stores" +
+                        " and cluttered workshops are some of the best places to visit to pick up traditional products " +
+                        "in Egypt."
+
             )
 
         ),
@@ -52,7 +79,12 @@ fun getSights(): List<Sight> {
                 "2. London Eye",
                 "3. Tower of London",
                 "4. London Tower Bridge",
-            )
+            ),
+            sight_info = listOf(
+                "sight1",
+                "sight2",
+                "sight3"
+            ),
 
         ),
         Sight(
@@ -72,7 +104,12 @@ fun getSights(): List<Sight> {
                 "2. Hofburg",
                 "3. Vienna Opera House",
                 "4. St. Stephens Cathedral"
-            )
+            ),
+            sight_info = listOf(
+                "sight1",
+                "sight2",
+                "sight3"
+            ),
 
         ),
         Sight(
@@ -92,7 +129,12 @@ fun getSights(): List<Sight> {
                 "2. Blue Mosque",
                 "3. Grand Bazaar",
                 "4. Topkapi Palace"
-            )
+            ),
+            sight_info = listOf(
+                "sight1",
+                "sight2",
+                "sight3"
+            ),
         ),
         Sight(
             R.drawable.venice_sight,
@@ -111,7 +153,12 @@ fun getSights(): List<Sight> {
                 "2. Santa Maria Della Salute",
                 "3. St. Marks Square",
                 "4. Bridge of Sighs"
-            )
+            ),
+            sight_info = listOf(
+                "sight1",
+                "sight2",
+                "sight3"
+            ),
 
         ),
         Sight(
@@ -131,7 +178,12 @@ fun getSights(): List<Sight> {
                 "2. Kiyomizo Dera Temple",
                 "3. Kinkaku Ji Golden Pavilion",
                 "4. Byodoin Temple"
-            )
+            ),
+            sight_info = listOf(
+                "sight1",
+                "sight2",
+                "sight3"
+            ),
 
         )
     )

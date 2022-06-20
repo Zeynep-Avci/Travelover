@@ -281,28 +281,31 @@ fun SightsImageSlider(sight: Sight = getSights()[0]) {
 
             Divider()
             Text(
-                text = sight.desc[0],
+                text = sight.desc[0] + "\n" + sight.sight_info[0],
                 fontSize = 18.sp,
                 color = GreyFont,
                 fontWeight = Normal,
                 modifier = Modifier.padding(horizontal = 20.dp),
             )
+            Divider()
             Text(
-                text = sight.desc[1],
+                text = sight.desc[1] + "\n" + sight.sight_info[1],
                 fontSize = 18.sp,
                 color = GreyFont,
                 fontWeight = Normal,
                 modifier = Modifier.padding(horizontal = 20.dp),
             )
+            Divider()
             Text(
-                text = sight.desc[2],
+                text = sight.desc[2] + "\n" + sight.sight_info[2],
                 fontSize = 18.sp,
                 color = GreyFont,
                 fontWeight = Normal,
                 modifier = Modifier.padding(horizontal = 20.dp),
             )
+            Divider()
             Text(
-                text = sight.desc[3],
+                text = sight.desc[3] + "\n" + sight.sight_info[3],
                 fontSize = 18.sp,
                 color = GreyFont,
                 fontWeight = Normal,
