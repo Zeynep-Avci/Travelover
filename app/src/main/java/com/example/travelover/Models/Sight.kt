@@ -81,9 +81,12 @@ fun getSights(): List<Sight> {
                 "4. London Tower Bridge",
             ),
             sight_info = listOf(
-                "sight1",
-                "sight2",
-                "sight3"
+                "Covering 350 acres, Hyde Park is London's largest open space and has been a destination for sightseers since 1635. One of the park's highlights is the Serpentine, an 18th-century man-made lake popular for boating and swimming. Hyde Park is also where you'll find Speakers' Corner, a traditional forum for free speech - and heckling.\n" +
+                        "\n" +
+                        "Another Hyde Park landmark is Apsley House, former home of the first Duke of Wellington and purchased after his famous victory at Waterloo. Now a museum, it houses Wellington's magnificent collections of paintings, including Velázquez's The Waterseller of Seville, along with gifts presented by grateful European kings and emperors. England's greatest hero is also commemorated at the Wellington Arch.",
+                "Built to mark London's millennium celebrations in 2000, the London Eye (officially the Coca-Cola London Eye) is Europe's largest observation wheel. Its individual glass capsules offer the most spectacular views of the city as you embark on a circular tour rising 443 feet above the Thames. The journey lasts close to 30 minutes, often quicker than the time spent lining up for your turn. If you can, reserve your time in advance.",
+                "From prison to palace, treasure vault to private zoo, the magnificent Tower of London has fulfilled many different roles over the centuries. One of Britain's most iconic structures, this spectacular World Heritage Site offers hours of fascination for visitors curious about the country's rich history - after all, so much of it happened here. Inside the massive White Tower, built in 1078 by William the Conqueror, is the 17th-century Line of Kings with its remarkable displays of royal armaments and armor.",
+                "The adjacent Tower Bridge, its two huge towers rising 200 feet above the River Thames, is one of London's best-known landmarks (fascinating behind-the-scenes tours are available). Walk across for the best Tower views, as well as a glimpse of London Bridge (which many mistakenly believe Tower Bridge to be) in the distance farther along the Thames. At the south side of the bridge, you'll find Butler's Wharf, a funky section of town boasting multiple restaurants."
             ),
 
         ),
@@ -100,15 +103,16 @@ fun getSights(): List<Sight> {
             ),
             4.0f,
             desc = listOf(
-                "1. Schonbrunn Palace Gardens",
+                "1. Schönbrunn Palace Gardens",
                 "2. Hofburg",
                 "3. Vienna Opera House",
                 "4. St. Stephens Cathedral"
             ),
             sight_info = listOf(
-                "sight1",
-                "sight2",
-                "sight3"
+                "The spectacular 18th-century Schönbrunn Palace (Schloss Schönbrunn) is worth visiting not only for its magnificent architecture, but also for its beautiful park-like setting. One of Vienna's top tourist attractions, this beautiful Baroque palace contains more than 1,441 rooms and apartments, including those once used by Empress Maria Theresa.",
+                "For more than six centuries the seat of the Habsburgs – and the official residence of every Austrian ruler since 1275 – the Hofburg is perhaps the most historically significant of Vienna's palaces. The official seat of the Austrian President, this sprawling complex consists of numerous buildings reflecting various periods, including architectural flourishes from the Gothic, Renaissance, Baroque, and Rococo movements.",
+                "The Vienna State Opera is an opera house and opera company based in Vienna, Austria. The 1,709-seat Renaissance Revival venue was the first major building on the Vienna Ring Road. It was built from 1861 to 1869 following plans by August Sicard von Sicardsburg and Eduard van der Nüll, and designs by Josef Hlávka.",
+                "Vienna's most important Gothic edifice and the cathedral church of the archbishopric since 1722, St. Stephen's Cathedral (Stephansdom) sits in the historic center of Vienna. The original 12th-century Romanesque church was replaced by a Late Romanesque one in the 13th century, the remains of which are the massive gate and the Heathen Towers (Heidentürme)."
             ),
 
         ),
