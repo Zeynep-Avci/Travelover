@@ -12,7 +12,6 @@ import com.example.travelover.Screens.HomeScreen
 import com.example.travelover.Screens.FavouriteScreen
 import com.example.travelover.Screens.SightsScreen
 import com.example.travelover.ViewModels.FavouriteViewModel
-import com.example.travelover.ViewModels.SearchViewModel
 
 
 @Composable

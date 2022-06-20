@@ -62,6 +62,7 @@ fun HomeScreen(navController: NavController, viewModel: FavouriteViewModel){
 
 @Composable
 fun MainContent(navController: NavController, favoritesViewModel: FavouriteViewModel, cities: List<City> = getCities()){
+
     LazyColumn {
         items(cities){ city ->
             CityRow(

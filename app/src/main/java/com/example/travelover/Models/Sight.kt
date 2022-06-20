@@ -27,10 +27,11 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/wpimages/2021/04/egypt-cairo-top-attractions-shop-amid-maze-khan-el-khalili.jpg"
             ),
             4.0f,
-            desc = listOf("Pyramids of Giza",
-                "Cairo Tower",
-            "Al-Azhar Mosque",
-                "Khan el-Khalili"
+            desc = listOf(
+                "1. Pyramids of Giza",
+                "2. Cairo Tower",
+                "3. Al-Azhar Mosque",
+                "4. Khan el-Khalili"
             )
 
         ),
@@ -46,10 +47,11 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/wpimages/2021/08/england-london-top-attractions-tower-london-tower-bridge.jpg"
             ),
             4.0f,
-            desc = listOf("Hyde Park",
-                "London Eye",
-                "Tower of London",
-                "London Tower Bridge",
+            desc = listOf(
+                "1. Hyde Park",
+                "2. London Eye",
+                "3. Tower of London",
+                "4. London Tower Bridge",
             )
 
         ),
@@ -65,10 +67,12 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/wpimages/2021/07/austria-vienna-top-attractions-climb-towers-st-stephens-cathedral.jpg"
             ),
             4.0f,
-            desc = listOf("Schonbrunn Palace Gardens",
-            "Hofburg",
-            "Vienna Opera House",
-            "St. Stephens Cathedral")
+            desc = listOf(
+                "1. Schonbrunn Palace Gardens",
+                "2. Hofburg",
+                "3. Vienna Opera House",
+                "4. St. Stephens Cathedral"
+            )
 
         ),
         Sight(
@@ -83,10 +87,12 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/photos-large/TR/turkey-istanbul-interior-topkapi-palace.jpg"
             ),
             4.0f,
-            desc = listOf("Aya Sofya",
-            "Blue Mosque",
-            "Grand Bazaar",
-            "Topkapi Palace")
+            desc = listOf(
+                "1. Aya Sofya",
+                "2. Blue Mosque",
+                "3. Grand Bazaar",
+                "4. Topkapi Palace"
+            )
         ),
         Sight(
             R.drawable.venice_sight,
@@ -100,10 +106,12 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/photos-large/I/italy-venice-bridge-of-sighs.jpg"
             ),
             4.0f,
-            desc = listOf("Venice Canale Grande",
-            "Santa Maria Della Salute",
-            "St. Marks Square",
-            "Bridge of Sighs")
+            desc = listOf(
+                "1. Venice Canale Grande",
+                "2. Santa Maria Della Salute",
+                "3. St. Marks Square",
+                "4. Bridge of Sighs"
+            )
 
         ),
         Sight(
@@ -118,10 +126,12 @@ fun getSights(): List<Sight> {
                 "https://www.planetware.com/photos-large/JPN/japan-kyoto-byodo-in-temple.jpg"
             ),
             4.0f,
-            desc = listOf("Nijo Castle",
-            "Kiyomizo Dera Temple",
-            "Kinkaku Ji Golden Pavilion",
-            "Byodoin Temple")
+            desc = listOf(
+                "1. Nijo Castle",
+                "2. Kiyomizo Dera Temple",
+                "3. Kinkaku Ji Golden Pavilion",
+                "4. Byodoin Temple"
+            )
 
         )
     )

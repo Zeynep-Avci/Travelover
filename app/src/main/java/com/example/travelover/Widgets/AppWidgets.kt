@@ -47,6 +47,7 @@ import coil.request.ImageRequest
 import com.example.travelover.Models.*
 import com.example.travelover.R
 import com.example.travelover.Screens.filterCity
+import com.example.travelover.ui.theme.GreyFont
 import com.example.travelover.ui.theme.LogoPink
 import com.example.travelover.ui.theme.NavColor
 import kotlinx.coroutines.delay
@@ -123,7 +124,7 @@ fun CityRow(
                     .crossfade(true)
                     .build(),
                 contentDescription = "City image",
-                contentScale = ContentScale.Crop,
+                contentScale = ContentScale.FillWidth,
                 modifier = Modifier.clip(RectangleShape)
 
 
@@ -246,7 +247,7 @@ fun SightsImageSlider(sight: Sight = getSights()[0]) {
 
                         Box(
                             modifier = Modifier
-                                .height(550.dp)
+                                .height(450.dp)
                                 .width(350.dp)
                         ) {
                             AsyncImage(
@@ -260,7 +261,6 @@ fun SightsImageSlider(sight: Sight = getSights()[0]) {
                             )
 
 
-
                         }
                         //content()
                     }
@@ -268,35 +268,56 @@ fun SightsImageSlider(sight: Sight = getSights()[0]) {
                 }
 
             }
-            LazyRow(
-                modifier = Modifier
-                    .align(Alignment.BottomEnd)
-                    .padding(15.dp, 0.dp, 15.dp, 0.dp)
-            ) { items(sight.desc) { desc ->
-
-                Box(modifier = Modifier
-                    .width(350.dp)
-                    .align(Alignment.BottomEnd)
-                )
-                {
-                    Text(
-                        text = desc,
-                        color = Color.White,
-                        fontWeight = Normal,
-                        style = MaterialTheme.typography.h5
-                    )
-                }
-
-
-            }
-
-            }
 
 
         }
-        //content()
+        Column(
+            modifier = Modifier
+            //.align(Alignment.BottomStart)
+            //.padding(15.dp, 0.dp, 15.dp, 0.dp)
+        ) { //items(sight.desc) { desc ->
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Divider()
+            Text(
+                text = sight.desc[0],
+                fontSize = 18.sp,
+                color = GreyFont,
+                fontWeight = Normal,
+                modifier = Modifier.padding(horizontal = 20.dp),
+            )
+            Text(
+                text = sight.desc[1],
+                fontSize = 18.sp,
+                color = GreyFont,
+                fontWeight = Normal,
+                modifier = Modifier.padding(horizontal = 20.dp),
+            )
+            Text(
+                text = sight.desc[2],
+                fontSize = 18.sp,
+                color = GreyFont,
+                fontWeight = Normal,
+                modifier = Modifier.padding(horizontal = 20.dp),
+            )
+            Text(
+                text = sight.desc[3],
+                fontSize = 18.sp,
+                color = GreyFont,
+                fontWeight = Normal,
+                modifier = Modifier.padding(horizontal = 20.dp),
+
+            )
+
+        }
+
+
     }
+
 }
+//content()
+
 
 //Function for famous sights of the shown city -> takes to SightsScreen
 @Preview
@@ -523,94 +544,4 @@ fun Restaurants(
 
     }
 }
-/*
 
-@Composable
-fun SearchAppBar(
-    city: City,
-    text: String,
-    onTextChange: (String) -> Unit,
-    onCloseClicked: () -> Unit,
-    onSearchClicked: (String) -> Unit,
-) {
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(56.dp),
-        elevation = AppBarDefaults.TopAppBarElevation,
-        color = MaterialTheme.colors.primary
-    ) {
-        TextField(modifier = Modifier
-            .fillMaxWidth(),
-            value = text,
-            onValueChange = {
-                onTextChange(it)
-            },
-            placeholder = {
-                Text(
-                    modifier = Modifier
-                        .alpha(ContentAlpha.medium),
-                    text = "Search here...",
-                    color = Color.White
-                )
-            },
-            textStyle = TextStyle(
-                fontSize = MaterialTheme.typography.subtitle1.fontSize
-            ),
-            singleLine = true,
-            leadingIcon = {
-                IconButton(
-                    modifier = Modifier
-                        .alpha(ContentAlpha.medium),
-                    onClick = {}
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Search,
-                        contentDescription = "Search Icon",
-                        tint = Color.White
-                    )
-                }
-            },
-            trailingIcon = {
-                IconButton(
-                    onClick = {
-                        if (text.isNotEmpty()) {
-                            onTextChange("")
-                        } else {
-                            onCloseClicked()
-                        }
-                    }
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Close,
-                        contentDescription = "Close Icon",
-                        tint = Color.White
-                    )
-                }
-            },
-            keyboardOptions = KeyboardOptions(
-                imeAction = ImeAction.Search
-            ),
-            keyboardActions = KeyboardActions(
-                onSearch = {
-                    onSearchClicked(text)
-                }
-            ),
-            colors = TextFieldDefaults.textFieldColors(
-                backgroundColor = Color.Transparent,
-                cursorColor = Color.White.copy(alpha = ContentAlpha.medium)
-            ))
-
-        if (text == city.name){
-            filterCity(cityId = city.name)
-        }else{
-            Text(
-                text = "City not ...",
-                color = Color.White
-            )
-        }
-    }
-}
-
-
-*/
