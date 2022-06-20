@@ -281,7 +281,7 @@ fun SightsImageSlider(sight: Sight = getSights()[0]) {
 
             Divider()
             Text(
-                text = sight.desc[0] + "\n" + sight.sight_info[0],
+                text = sight.desc[0] + "\n" + "\n"+ sight.sight_info[0],
                 fontSize = 18.sp,
                 color = GreyFont,
                 fontWeight = Normal,
@@ -290,7 +290,7 @@ fun SightsImageSlider(sight: Sight = getSights()[0]) {
             Divider()
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = sight.desc[1] + "\n" + sight.sight_info[1],
+                text = sight.desc[1] + "\n" + "\n" + sight.sight_info[1],
                 fontSize = 18.sp,
                 color = GreyFont,
                 fontWeight = Normal,
@@ -299,7 +299,7 @@ fun SightsImageSlider(sight: Sight = getSights()[0]) {
             Divider()
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = sight.desc[2] + "\n" + sight.sight_info[2],
+                text = sight.desc[2] + "\n"+ "\n" + sight.sight_info[2],
                 fontSize = 18.sp,
                 color = GreyFont,
                 fontWeight = Normal,
@@ -308,7 +308,7 @@ fun SightsImageSlider(sight: Sight = getSights()[0]) {
             Divider()
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = sight.desc[3] + "\n" + sight.sight_info[3],
+                text = sight.desc[3] + "\n" + "\n"+ sight.sight_info[3],
                 fontSize = 18.sp,
                 color = GreyFont,
                 fontWeight = Normal,
